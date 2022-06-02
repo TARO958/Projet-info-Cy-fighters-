@@ -7,7 +7,7 @@
 #include "perso.h"
 #include "dif.h"
 
-
+// Fonction pour choisir le nombre de joueurs
 void choisirnmbjoueur(){
     int nmb;
     do{
