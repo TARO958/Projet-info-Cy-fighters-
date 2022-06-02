@@ -168,7 +168,7 @@ void list_perso1(){
         }
         bas2();
         ecrire_ligne("page 1",6);
-        ecrire_ligne_droite_gauche("'0'Previous page",16,"'2'Previous page");
+        ecrire_ligne_droite_gauche("'0'Previous page",16,"'2'Next page");
         bas();
         scanf("%d",&x);
         viderclavier();
@@ -251,7 +251,7 @@ void list_perso3(){
         }
         bas2();
         ecrire_ligne("page 3",6);
-        ecrire_ligne_droite_gauche("'0'Previous page",16,"'2'Previous page");
+        ecrire_ligne_droite_gauche("'0'Previous page",16,"'2'Next page");
         bas();
         scanf("%d",&x);
         viderclavier();

@@ -86,7 +86,7 @@ void list_perso2(){
     }
     bas2();
     ecrire_ligne("page 2",6);
-    ecrire_ligne_droite_gauche("'0'Previous page",16,"'2'Previous page");
+    ecrire_ligne_droite_gauche("'0'Previous page",16,"'2'Next page");
     bas();
     scanf("%d",&x);
     viderclavier();
