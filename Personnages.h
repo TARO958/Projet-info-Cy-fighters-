@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "Spéciale.h"
+#include "Speciale.h"
 typedef struct Personnages Personnages;
 
 
@@ -23,6 +23,6 @@ typedef struct Personnages Personnages;
 Personnages *cherche_personnages(char*nom_personnages);
 void liste_personnages();
 
-dd
+
 
 
