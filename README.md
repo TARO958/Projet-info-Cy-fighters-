@@ -1,8 +1,17 @@
-# Projet-info-Cy-fighters
+# CY Fighters
+
+This project for CY-Tech is a ... 
 
 ```
 Hello World
 ```
 
-# This is a title
+# How to launch
+
+```
+make ...
+```
+# Collaborators
+
+
 
