@@ -3,7 +3,7 @@
 #include <string.h>
 #define TAILLE 88
 #define ELLIAT 22
-#include "perso.h"
+#include "pseudo.h"
 #include "interface.h"
 #include "dif.h"
 
@@ -12,7 +12,6 @@ void pseudoj(){
     char nom2[25];
     char *p;
     int x,y,z;
-    char d[] = "";
     do{
         choix_nom();
         do{
@@ -39,18 +38,10 @@ void pseudoj(){
             choisirnmbjoueur();
             break;
         case 1:
-            choisir2perso();
+            list_perso1();
             break;
         default:
             break;
         }
     } while (x != 0);
-}
-
-void choisir2perso(){
-
-}
-
-void choisirperso(int x){
-
 }

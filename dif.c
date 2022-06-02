@@ -4,7 +4,7 @@
 #define TAILLE 88
 #define ELLIAT 22
 #include "interface.h"
-#include "perso.h"
+#include "pseudo.h"
 #include "dif.h"
 
 void viderclavier(){
@@ -22,16 +22,16 @@ void choisir_dif(){
             choisirnmbjoueur();
             break;
         case 1:
-            choisirperso(bot);
+            
             break;
         case 2:
-            choisirperso(bot);
+          
             break;
         case 3:
-            choisirperso(bot);
+          
             break;
         case 4:
-            choisirperso(bot);
+            
             break;
         default:
             printf("entez la difficulté de votre choix.");

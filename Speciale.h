@@ -9,5 +9,4 @@ struct Speciales{
     char description[25];
     int nb_tours_actifs;
     int nb_tours_rechargement;
-    ff
 };

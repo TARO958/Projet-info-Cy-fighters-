@@ -4,7 +4,7 @@
 #define TAILLE 88
 #define ELLIAT 22
 #include "interface.h"
-#include "perso.h"
+#include "pseudo.h"
 #include "dif.h"
 
 
