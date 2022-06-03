@@ -108,62 +108,65 @@ void list_perso1(){
     int x;
     do{
         haut();
-        ecrire_ligne("enter '1' if u want to select the character",43);
+        ecrire_ligne("CHARACTER LIST",14);
+        ecrire_ligne("Type '1' to go to the character selection",41);
         bas();
         for (int i=0;i<ELLIAT;i++){
-            if(i==1){
+            switch (i){
+            case 1:
                 ecrire_ligne_mdg("ADRIEN",6,"CELINE",6);
-            }
-            else if(i==3){
+                break;
+            case 3:
                 ecrire_ligne_mdg("type : Tank",11,"type : Support",14);
-            }
-            else if(i==4){
+                break;
+            case 4:
                 ecrire_ligne_mdg("Pv : 700",8,"pv : 250",8);
-            }
-            else if(i==5){
+                break;
+            case 5:
                 ecrire_ligne_mdg("att : 40",8,"att : 70",8);
-            }
-            else if(i==6){
+                break;
+            case 6:
                 ecrire_ligne_mdg("def : 0.60",10,"def : 0.20",10);
-            }
-            else if(i==7){
+                break;
+            case 7:
                 ecrire_ligne_mdg("vit : 20",8,"vit : 90",8);
-            }
-            else if(i==8){
+                break;
+            case 8:
                 ecrire_ligne_mdg("agi : 0.30",10,"agi : 0.80",10);
-            }
-            else if(i==9){
+                break;
+            case 9:
                 ecrire_ligne_mdg("ult : ",6,"ult : ",6);
-            }
-            else if(i==11){
+                break;
+            case 11:
                 bas2();
-            }
-            else if(i==13){
+                break;
+            case 13:
                 ecrire_ligne_mdg("PETER",5,"LUCAS",5);
-            }
-            else if(i==15){
+                break;
+            case 15:
                 ecrire_ligne_mdg("type : Mage",11,"type : Tank",11);
-            }
-            else if(i==16){
+                break;
+            case 16:
                 ecrire_ligne_mdg("Pv : 500",8,"pv : 750",8);
-            }
-            else if(i==17){
+                break;
+            case 17:
                 ecrire_ligne_mdg("att : 50",8,"att : 30",8);
-            }
-            else if(i==18){
+                break;
+            case 18:
                 ecrire_ligne_mdg("def : 0.50",10,"def : 0.65",10);
-            }
-            else if(i==19){
+                break;
+            case 19:
                 ecrire_ligne_mdg("vit : 50",8,"vit : 15",8);
-            }
-            else if(i==20){
+                break;
+            case 20:
                 ecrire_ligne_mdg("agi : 0.50",10,"agi : 0.20",10);
-            }
-            else if(i==21){
+                break;
+            case 21:
                 ecrire_ligne_mdg("ult : ",6,"ult : ",6);
-            }
-            else{
+                break;
+            default:
                 barre_m();
+                break;
             }
         }
         bas2();
@@ -191,7 +194,8 @@ void list_perso3(){
     int x;
     do{
         haut();
-        ecrire_ligne("enter '1' if u want to select the character",43);
+        ecrire_ligne("CHARACTER LIST",14);
+        ecrire_ligne("Type '1' to go to the character selection",41);
         bas();
         for (int i=0;i<ELLIAT;i++){
             switch (i){
@@ -286,7 +290,7 @@ void choix_nom(){
             ecrire_ligne("You will type your",18);
             break;
         case 14:
-            ecrire_ligne("nickname! each in turn",22);
+            ecrire_ligne("nickname each in turn",21);
             break;
         default:
             cadre();
@@ -338,31 +342,31 @@ void choisir_bot(){
             bas();
             break;
         case 5:
-            ecrire_ligne_mdg("Type '1' to play",16,"Type '2' to play",16);
+            ecrire_ligne_mdg("Type '1'",8,"Type '2'",8);
             break;
         case 6:
-            ecrire_ligne_mdg("on",2,"on",2);
+            ecrire_ligne_mdg("for",3,"for",3);
             break;
         case 7:
-            ecrire_ligne_mdg("noob",4,"easy",4);
+            ecrire_ligne_mdg("a noob bot",10,"an easy bot",11);
             break;
         case 10:
             bas2();
             break;
         case 14:
-            ecrire_ligne_mdg("Type '3' to play",16,"Type '4' to play",16);
+            ecrire_ligne_mdg("Type '3'",8,"Type '4'",8);
             break;
         case 15:
-            ecrire_ligne_mdg("on",2,"on",2);
+            ecrire_ligne_mdg("for",3,"for",3);
             break;
         case 16:
-            ecrire_ligne_mdg("normal",6,"hard",4);
+            ecrire_ligne_mdg("a normal bot",12,"a hard bot",10);
             break;
         case 20:
             bas2();
             break;
         case 21:
-            ecrire_ligne("Enter '0' to go back",20);
+            ecrire_ligne("Type '0' to go back",19);
             break;
         default:
             barre_m();
@@ -376,7 +380,7 @@ void nombrejoueur(){
     haut();
     for (int i=0;i<ELLIAT;i++){
         if(i==5){
-            ecrire_ligne("Enter '2' if you are 2 players and '1' if you are alone",55);
+            ecrire_ligne("Type '2' if you are 2 players and '1' if you are alone",54);
         }
         else if(i==10){
             bas();
@@ -385,10 +389,10 @@ void nombrejoueur(){
             ecrire_ligne_mdg("Play with ",10,"Play against",12);
         }
         else if(i==16){
-            ecrire_ligne_mdg("ur friend!",10,"bot!",4);
+            ecrire_ligne_mdg("your friend!",12,"a bot!",6);
         }
         else if(i==18){
-            ecrire_ligne_mdg("for lot of fun",14,"with many difficulty",20);
+            ecrire_ligne_mdg("for a lot of fun",16,"with many difficulties",22);
         }
         else if(i>10){
             barre_m();
@@ -411,7 +415,7 @@ void startgame(){
             ecrire_ligne("CY  FIGHTERS",12);
             break;
         case 11:
-            ecrire_ligne("Enter '1' to start",18);
+            ecrire_ligne("Type '1' to start",17);
             break;
         case 20:
             ecrire_ligne_gauche("Evan Gobe-Truong",16);

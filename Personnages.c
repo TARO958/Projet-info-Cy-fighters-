@@ -26,7 +26,8 @@ void list_perso2(){
     int x;
     do{
     haut();
-    ecrire_ligne("enter '1' if u want to select the character",43);
+    ecrire_ligne("CHARACTER LIST",14);
+    ecrire_ligne("Type '1' to go to the character selection",41);
     bas();
     for (int i=0;i<ELLIAT;i++){
         switch (i){
