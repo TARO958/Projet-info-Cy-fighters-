@@ -86,6 +86,26 @@ void ecrire_ligne_mdg(char chaine[], int len_chaine,char chaine2[], int dec2){
     printf("\n");
 }
 
+void ecrire_ligne_dg(char chaine[], int len_chaine,char chaine2[], int dec2){
+    int decalage = (44 - len_chaine)/2;
+    int decalage2 =(44 - dec2)/2;
+    printf("%-*s", decalage, "|");
+    if(len_chaine%2==1){
+        printf("%-*s", decalage+len_chaine+1, chaine);
+    }
+    else{
+    printf("%-*s", decalage+len_chaine, chaine);
+    }
+    printf("%-*s", decalage2, " ");
+    if(dec2%2==1){
+        printf("%s%*s", chaine2, decalage2+1, "|");
+    }
+    else{
+    printf("%s%*s", chaine2, decalage2, "|");
+    }
+    printf("\n");
+}
+
 void ecrire_ligne_gauche(char chaine[], int len_chaine) {  
     printf("|%s", chaine);
     printf("%*s", TAILLE-len_chaine-1, "|");
@@ -103,18 +123,51 @@ void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]) {
 }
 
 
+
+
+
+
 void selection(){
     haut();
     for (int i=0;i<ELLIAT;i++){
         switch (i){
-        case 3:
-
+        case 2:
+            ecrire_ligne("CHARACTER SELECTION",19);
+            break;
+        case 4:
+            ecrire_ligne("Type the name of the character you want to play",47);
+            break;
+        case 5:
+            ecrire_ligne("You can choose 3 characters in each team",40);
+            break;
+        case 7:
+            bas();
+            break;
+        case 10:
+            ecrire_ligne_dg("Anton",5,"Celine",6);
+            break;
+        case 12:
+            ecrire_ligne_dg("Peter",5,"Lucas",5);
+            break;
+        case 14:
+            ecrire_ligne_dg("Samuel",6,"Thibaut",7);
+            break;
+        case 16:
+            ecrire_ligne_dg("Sabrina",7,"Lea",3);
+            break;
+        case 18:
+            ecrire_ligne_dg("Laurie",6,"Theo",4);
+            break;
+        case 20:
+            ecrire_ligne_dg("Evan",4,"Enzo",4);
             break;
         default:
+
             cadre();
             break;
         }
     }
+    bas();
 }
 
 void list_perso1(){
@@ -127,7 +180,7 @@ void list_perso1(){
         for (int i=0;i<ELLIAT;i++){
             switch (i){
             case 1:
-                ecrire_ligne_mdg("ADRIEN",6,"CELINE",6);
+                ecrire_ligne_mdg("ANTON",5,"CELINE",6);
                 break;
             case 3:
                 ecrire_ligne_mdg("type : Tank",11,"type : Support",14);
@@ -286,7 +339,7 @@ void list_perso3(){
             default:
                 break;
         }
-    } while (x != 0);
+    }while(x!=0);
 }
 
 void choix_nom(){
@@ -317,7 +370,7 @@ void fin_choix(char nom1[25],char nom2[25],int y,int z){
     haut();
     for (int i=0;i<ELLIAT;i++){
         if(i==2){
-            ecrire_ligne("Enter '1' to continue",21);
+            ecrire_ligne("Type '1' to continue",20);
         }
         else if(i==4){
             bas();
@@ -332,7 +385,7 @@ void fin_choix(char nom1[25],char nom2[25],int y,int z){
             bas2();
         }
         else if(i==20){
-            ecrire_ligne("Enter '0' to go back to player selection",40);
+            ecrire_ligne("Type '0' to go back to player selection",39);
         }
         else if(i>4 && i<17){
             barre_m();
