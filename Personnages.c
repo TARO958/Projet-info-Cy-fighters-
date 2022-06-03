@@ -107,7 +107,7 @@ void list_perso2(){
         default:
             break;
         }
-    } while (x != 0);
+    }while(x!=0);
 }
 
  Personnages *cherche_personnages(char *nom_personnages){
@@ -125,34 +125,34 @@ void select_perso(){
     char recherche[20];
     Personnages *perso_select_joueur1[3];
     Personnages *perso_select_joueur2[3];
+    selection();
     for(int i=0;i<3;i++){
         do{
-        printf("Joueur 1 : Choix du personnage %d: ",(i+1));
-        scanf("%s",recherche);
-        perso_select_joueur1[i]=cherche_personnages(recherche);
-        if(perso_select_joueur1[i]==NULL){
-            printf("Ce nom n'existe pas.");
-        }
-        else{
-        printf("%s\n",perso_select_joueur1[i]->nom);
-        }
+            printf("Player 1 : character %d: ",(i+1));
+            scanf("%s",recherche);
+            perso_select_joueur1[i]=cherche_personnages(recherche);
+            if(perso_select_joueur1[i]==NULL){
+                printf("Error, this name doesn't exist.\n");
+            }
+            else{
+                printf("%s\n",perso_select_joueur1[i]->nom);
+            }
         }while(perso_select_joueur1[i]==NULL);
     }
-     
-    
     for(int j=0;j<3;j++){
         do{
-        printf("Joueur 2 : Choix du personnage %d: ",(j+1));
-        scanf("%s",recherche);
-        perso_select_joueur2[j]=cherche_personnages(recherche);
-        if(perso_select_joueur2[j]==NULL){
-            printf("Ce nom n'existe pas.");
-        }
+            printf("Player 2 : character %d: ",(j+1));
+            scanf("%s",recherche);
+            perso_select_joueur2[j]=cherche_personnages(recherche);
+            if(perso_select_joueur2[j]==NULL){
+                printf("Error, this name doesn't exist.\n");
+            }
         else{
         printf("%s\n",perso_select_joueur2[j]->nom);
         }
         }while(&perso_select_joueur2[j]==NULL);
     }
+
 
     //tri des tableaux en fonction de leurs vitesse
     int i,j;
@@ -167,9 +167,7 @@ void select_perso(){
            }
        }
     }
-
     printf("%s  %f\n",perso_select_joueur1[0]->nom,perso_select_joueur1[0]->vit);   
     printf("%s  %f\n",perso_select_joueur1[1]->nom,perso_select_joueur1[1]->vit); 
     printf("%s  %f\n",perso_select_joueur1[2]->nom,perso_select_joueur1[2]->vit); 
-    
 }
