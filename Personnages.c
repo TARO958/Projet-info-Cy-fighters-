@@ -8,7 +8,7 @@
 #define ELLIAT 22
 
 Personnages tab[NB_Personnages]={
-    {.nom = "Adrien",.type = "Tank",.point_de_vie_courante = 700 ,.point_de_vie_maximum =1000 ,.agi=0.3,.att =40,.vit = 20,.def = 0.6},
+    {.nom = "Anton",.type = "Tank",.point_de_vie_courante = 700 ,.point_de_vie_maximum =1000 ,.agi=0.3,.att =40,.vit = 20,.def = 0.6},
     {.nom = "Celine",.type = "Soigneuse",.point_de_vie_courante = 250 ,.point_de_vie_maximum =1000 ,.agi=0.8,.att =70,.vit = 90,.def = 0.2},
     {.nom = "Peter",.type = "Mage",.point_de_vie_courante = 500 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =50,.vit = 50,.def = 0.5},
     {.nom = "Lucas",.type = "Tank",.point_de_vie_courante = 750 ,.point_de_vie_maximum =1000 ,.agi=0.2,.att =30,.vit = 15,.def = 0.65},
@@ -24,51 +24,23 @@ Personnages tab[NB_Personnages]={
 };
 
 void select_engagement(Personnages perso_select_joueur1[],Personnages perso_select_joueur2[]){
-    int vit1[2][3]={0};
-    int vit2[2][3]={0};
-    vit1[0][0]=perso_select_joueur1[0].vit;
-    vit1[0][1]=perso_select_joueur1[1].vit;
-    vit1[0][2]=perso_select_joueur1[2].vit;
-    vit1[1][0]=0;
-    vit1[1][1]=1;
-    vit1[1][2]=2;
+
     int i,j,c;
     for(i=0;i<3;i++){
-        for(j=i;j<3;j++){
-            if ( vit1[0][i] > vit1[0][j] ) {
-                c = vit1[0][i];
-                vit1[0][i] = vit1[0][j];
-                vit1[0][j] = c;
-                
-                c = vit1[1][i];
-                vit1[1][i] = vit1[1][j];
-                vit1[1][j] = c;
-    
-            }
-        }
-    }   
-    vit2[0][0]=perso_select_joueur2[0].vit;
-    vit2[0][1]=perso_select_joueur2[1].vit;
-    vit2[0][2]=perso_select_joueur2[2].vit;
-    vit2[1][0]=0;
-    vit2[1][1]=1;
-    vit2[1][2]=2;
-    int a,b,d;
-    for(a=0;a<3;a++){
-        for(b=i;b<3;b++){
-            if ( vit2[0][a] > vit2[0][b] ) {
-                d = vit2[0][a];
-                vit2[0][a] = vit2[0][b];
-                vit2[0][b] = d;
-                
-                d = vit2[1][a];
-                vit2[1][a] = vit2[1][b];
-                vit2[1][b] = d;
-    
-            }
-        }
-    }   
-printf("%f  %f",perso_select_joueur1[vit1[1][0]],vit1[0][0]);
+       for(j=i;j<3;j++){
+           if ( perso_select_joueur1[i].vit > perso_select_joueur1[j].vit ) {
+                c = perso_select_joueur1[i].vit;
+                perso_select_joueur1[i].vit = perso_select_joueur1[j].vit;
+               perso_select_joueur1[j].vit = c;
+               
+           }
+       }
+   }
+   printf("%s  %f",perso_select_joueur1[0].nom,perso_select_joueur1[0].vit);   
+   printf("%s  %f",perso_select_joueur1[1].nom,perso_select_joueur1[1].vit); 
+   printf("%s  %f",perso_select_joueur1[2].nom,perso_select_joueur1[2].vit);  
+
+
 
 }
 
@@ -155,19 +127,21 @@ void list_perso2(){
     } while (x != 0);
 }
 
-Personnages *cherche_personnages(char *nom_personnages){
+ Personnages *cherche_personnages(char *nom_personnages){
     for(int i=0;i<NB_Personnages;i++){
         if(strcmpi(tab[i].nom,nom_personnages)==0){
+            
+
             return &tab[i];
         }
     }
-    return NULL; 
+    return NULL;
 }
 
 void select_perso(){
-    char recherche[10];
-    Personnages *perso_select_joueur1[3]={0};
-    Personnages *perso_select_joueur2[3]={0};
+    char recherche[20];
+    Personnages *perso_select_joueur1[3];
+    Personnages *perso_select_joueur2[3];
     for(int i=0;i<3;i++){
         do{
         printf("Joueur 1 : Choix du personnage %d: ",(i+1));
@@ -175,12 +149,11 @@ void select_perso(){
         perso_select_joueur1[i]=cherche_personnages(recherche);
         if(perso_select_joueur1[i]==NULL){
             printf("Ce nom n'existe pas.");
-
-
         }
+        printf("%s\n",perso_select_joueur1[i]->nom);
         }while(perso_select_joueur1[i]==NULL);
     }
-    printf("\n");
+    
     for(int j=0;j<3;j++){
         do{
         printf("Joueur 2 : Choix du personnage %d: ",(j+1));
@@ -191,7 +164,9 @@ void select_perso(){
 
 
         }
-        }while(perso_select_joueur2[j]==NULL);
+        printf("%s\n",perso_select_joueur2[j]->nom);
+        }while(&perso_select_joueur2[j]==NULL);
     }
-    select_engagement(*perso_select_joueur1,*perso_select_joueur2);
+    select_engagement( *perso_select_joueur1, *perso_select_joueur2); 
+    
 }
