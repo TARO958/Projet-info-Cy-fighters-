@@ -2,27 +2,58 @@
 #include <stdlib.h>
 #include "combat.h"
 #include "Personnages.h"
+#include "interface.h"
 
-#define NMB_perso 6 
-
-
-
-
-
-void tri_vit(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
+void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *ordre[6]){
+    int a=0;
+    int b=0;
     int i,j;
     Personnages *c;
     for(i=0;i<3;i++){
        for(j=i;j<3;j++){
-           if ( perso_select_joueur1[i]->vit < perso_select_joueur1[j]->vit ) {
+           if ( perso_select_joueur1[i]->vit < perso_select_joueur1[j]->vit ){
                 c = perso_select_joueur1[i];
                 perso_select_joueur1[i] = perso_select_joueur1[j];
-               perso_select_joueur1[j] = c;
-               
+                perso_select_joueur1[j] = c;
            }
        }
     }
-    printf("%s  %f\n",perso_select_joueur1[0]->nom,perso_select_joueur1[0]->vit);   
-    printf("%s  %f\n",perso_select_joueur1[1]->nom,perso_select_joueur1[1]->vit); 
-    printf("%s  %f\n",perso_select_joueur1[2]->nom,perso_select_joueur1[2]->vit); 
+    for(i=0;i<3;i++){
+       for(j=i;j<3;j++){
+           if ( perso_select_joueur2[i]->vit < perso_select_joueur2[j]->vit ){
+                c = perso_select_joueur2[i];
+                perso_select_joueur2[i] = perso_select_joueur2[j];
+                perso_select_joueur2[j] = c;
+           }
+       }
+    }
+    for(i=0;i<6;i++){
+        if(perso_select_joueur1[a]->vit < perso_select_joueur2[b]->vit){
+            ordre[i]=perso_select_joueur1[a];
+            a++;
+        }
+        else{
+            ordre[i]=perso_select_joueur2[b];
+            b++;
+        }
+    }
+    for(i=0;i<6;i++){
+        printf("%s;%f\n",ordre[i]->nom,ordre[i]->vit);
+
+    }
+}
+
+void tri_vit(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
+    int i,j;
+    Personnages *ordre[6];
+    Personnages *ordre2[6];
+    for(i=0;i<6;i++){
+        if(i<3){
+            ordre[i]=perso_select_joueur1[i];
+        }
+        else{
+            ordre[i]=perso_select_joueur2[i-3];
+        }
+    }
+    trifusion(perso_select_joueur1,perso_select_joueur2,ordre2);
 }

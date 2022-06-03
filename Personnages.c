@@ -48,7 +48,7 @@ void list_perso2(){
                 ecrire_ligne_mdg("def : 0.10",10,"def : 0.80",10);
                 break;
             case 7:
-                ecrire_ligne_mdg("vit : 60",8,"vit : 40",8);
+                ecrire_ligne_mdg("vit : 99",8,"vit : 40",8);
                 break;
             case 8:
                 ecrire_ligne_mdg("agi : 0.40",10,"agi : 0.15",10);
@@ -75,7 +75,7 @@ void list_perso2(){
                 ecrire_ligne_mdg("def : 0.60",10,"def : 0.40",10);
                 break;
             case 19:
-                ecrire_ligne_mdg("vit : 50",8,"vit : 30",8);
+                ecrire_ligne_mdg("vit : 90",8,"vit : 35",8);
                 break;
             case 20:
                 ecrire_ligne_mdg("agi : 0.10",10,"agi : 0.50",10);
