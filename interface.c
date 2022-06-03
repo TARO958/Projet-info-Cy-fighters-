@@ -195,7 +195,7 @@ void list_perso1(){
                 ecrire_ligne_mdg("def : 0.60",10,"def : 0.20",10);
                 break;
             case 7:
-                ecrire_ligne_mdg("vit : 20",8,"vit : 90",8);
+                ecrire_ligne_mdg("vit : 50",8,"vit : 20",8);
                 break;
             case 8:
                 ecrire_ligne_mdg("agi : 0.30",10,"agi : 0.80",10);

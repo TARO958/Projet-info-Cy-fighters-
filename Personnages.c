@@ -20,7 +20,6 @@ Personnages tab[NB_Personnages]={
     {.nom = "Theo",.type = "Guerrier",.point_de_vie_courante = 350 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 80,.def = 0.9},
     {.nom = "Evan",.type = "Guerrier",.point_de_vie_courante = 450 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 85,.def = 0.1},
     {.nom = "Enzo",.type = "Assassin",.point_de_vie_courante = 250 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 95,.def = 0.5},
-
 };
 
 void list_perso2(){
