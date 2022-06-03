@@ -253,7 +253,7 @@ void list_perso1(){
             default:
                 break;
         }
-    } while (x != 0);  
+    }while(x!=0);  
 }
 
 void list_perso3(){
