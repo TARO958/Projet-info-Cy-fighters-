@@ -6,7 +6,8 @@
 #include "interface.h"
 #include "pseudo.h"
 #include "dif.h"
-
+#include "Personnages.h"
+#include "combat.h"
 
 void choisirnmbjoueur(){
     int nmb;
