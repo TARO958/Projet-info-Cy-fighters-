@@ -15,7 +15,7 @@ Personnages tab[NB_Personnages]={
     {.nom = "Samuel",.type = "Assasins",.point_de_vie_courante = 250 ,.point_de_vie_maximum =1000 ,.agi=0.4,.att =90,.vit = 60,.def = 0.1},
     {.nom = "Thibaut",.type = "Tank",.point_de_vie_courante = 800 ,.point_de_vie_maximum =1000 ,.agi=0.15,.att =20,.vit = 40,.def = 0.8},
     {.nom = "Sabrina",.type = "Assasins",.point_de_vie_courante = 500 ,.point_de_vie_maximum =1000 ,.agi=0.1,.att =80,.vit = 50,.def = 0.6},
-    {.nom = "Léa",.type = "Mage",.point_de_vie_courante = 150 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 30,.def = 0.4},
+    {.nom = "Lea",.type = "Mage",.point_de_vie_courante = 150 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 30,.def = 0.4},
     {.nom = "Laurie",.type = "Soigneuse",.point_de_vie_courante = 550 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 80,.def = 0.2},
     {.nom = "Theo",.type = "Gueurrier",.point_de_vie_courante = 350 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 60,.def = 0.9},
     {.nom = "Evan",.type = "Gueurrier",.point_de_vie_courante = 450 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 20,.def = 0.1},
@@ -23,26 +23,6 @@ Personnages tab[NB_Personnages]={
 
 };
 
-void select_engagement(Personnages perso_select_joueur1[],Personnages perso_select_joueur2[]){
-
-    int i,j,c;
-    for(i=0;i<3;i++){
-       for(j=i;j<3;j++){
-           if ( perso_select_joueur1[i].vit > perso_select_joueur1[j].vit ) {
-                c = perso_select_joueur1[i].vit;
-                perso_select_joueur1[i].vit = perso_select_joueur1[j].vit;
-               perso_select_joueur1[j].vit = c;
-               
-           }
-       }
-   }
-   printf("%s  %f",perso_select_joueur1[0].nom,perso_select_joueur1[0].vit);   
-   printf("%s  %f",perso_select_joueur1[1].nom,perso_select_joueur1[1].vit); 
-   printf("%s  %f",perso_select_joueur1[2].nom,perso_select_joueur1[2].vit);  
-
-
-
-}
 
 void list_perso2(){
     int x;
@@ -150,9 +130,12 @@ void select_perso(){
         if(perso_select_joueur1[i]==NULL){
             printf("Ce nom n'existe pas.");
         }
+        else{
         printf("%s\n",perso_select_joueur1[i]->nom);
+        }
         }while(perso_select_joueur1[i]==NULL);
     }
+     
     
     for(int j=0;j<3;j++){
         do{
@@ -161,12 +144,32 @@ void select_perso(){
         perso_select_joueur2[j]=cherche_personnages(recherche);
         if(perso_select_joueur2[j]==NULL){
             printf("Ce nom n'existe pas.");
+            
 
 
         }
+        else{
         printf("%s\n",perso_select_joueur2[j]->nom);
+        }
         }while(&perso_select_joueur2[j]==NULL);
     }
-    select_engagement( *perso_select_joueur1, *perso_select_joueur2); 
+
+    //tri des tableaux en fonction de leurs vitesse
+    int i,j;
+    Personnages *c;
+    for(i=0;i<3;i++){
+       for(j=i;j<3;j++){
+           if ( perso_select_joueur1[i] < perso_select_joueur1[j] ) {
+                c = perso_select_joueur1[i];
+                perso_select_joueur1[i] = perso_select_joueur1[j];
+               perso_select_joueur1[j] = c;
+               
+           }
+       }
+    }
+
+    printf("%s  %f\n",perso_select_joueur1[0]->nom,perso_select_joueur1[0]->vit);   
+    printf("%s  %f\n",perso_select_joueur1[1]->nom,perso_select_joueur1[1]->vit); 
+    printf("%s  %f\n",perso_select_joueur1[2]->nom,perso_select_joueur1[2]->vit); 
     
 }
