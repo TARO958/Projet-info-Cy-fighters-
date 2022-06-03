@@ -123,5 +123,4 @@ void select_perso(){
         perso_select[i]=cherche_personnages(recherche);
         }while(perso_select[i]==NULL);
     }
-
 }
