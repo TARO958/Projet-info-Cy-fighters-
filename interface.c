@@ -194,59 +194,61 @@ void list_perso3(){
         ecrire_ligne("enter '1' if u want to select the character",43);
         bas();
         for (int i=0;i<ELLIAT;i++){
-            if(i==1){
+            switch (i){
+            case 1:
                 ecrire_ligne_mdg("LAURIE",6,"THEO",4);
-            }
-            else if(i==3){
+                break;
+            case 3:
                 ecrire_ligne_mdg("type : Support",14,"type : Warrior",14);
-            }
-            else if(i==4){
+                break;
+            case 4:
                 ecrire_ligne_mdg("Pv : 550",8,"pv : 350",8);
-            }
-            else if(i==5){
+                break;
+            case 5:
                 ecrire_ligne_mdg("att : 60",8,"att : 60",8);
-            }
-            else if(i==6){
+                break;
+            case 6:
                 ecrire_ligne_mdg("def : 0.40",10,"def : 0.90",10);
-            }
-            else if(i==7){
+                break;
+            case 7:
                 ecrire_ligne_mdg("vit : 30",8,"vit : 60",8);
-            }
-            else if(i==8){
+                break;
+            case 8:
                 ecrire_ligne_mdg("agi : 0.50",10,"agi : 0.50",10);
-            }
-            else if(i==9){
+                break;
+            case 9:
                 ecrire_ligne_mdg("ult : ",6,"ult : ",6);
-            }
-            else if(i==11){
+                break;
+            case 11:
                 bas2();
-            }
-            else if(i==13){
+                break;
+            case 13:
                 ecrire_ligne_mdg("EVAN",4,"ENZO",4);
-            }
-            else if(i==15){
+                break;
+            case 15:
                 ecrire_ligne_mdg("type : Warrior",14,"type : Assassin",15);
-            }
-            else if(i==16){
+                break;
+            case 16:
                 ecrire_ligne_mdg("Pv : 450",8,"pv : 250",8);
-            }
-            else if(i==17){
+                break;
+            case 17:
                 ecrire_ligne_mdg("att : 60",8,"att : 60",8);
-            }
-            else if(i==18){
+                break;
+            case 18:
                 ecrire_ligne_mdg("def : 0.10",10,"def : 0.50",10);
-            }
-            else if(i==19){
+                break;
+            case 19:
                 ecrire_ligne_mdg("vit : 20",8,"vit : 10",8);
-            }
-            else if(i==20){
+                break;
+            case 20:
                 ecrire_ligne_mdg("agi : 0.50",10,"agi : 0.50",10);
-            }
-            else if(i==21){
+                break;
+            case 21:
                 ecrire_ligne_mdg("ult : ",6,"ult : ",6);
-            }
-            else{
+                break;
+            default:
                 barre_m();
+                break;
             }
         }
         bas2();
@@ -273,20 +275,22 @@ void list_perso3(){
 void choix_nom(){
     haut();
     for (int i=0;i<ELLIAT;i++){
-        if(i==2){
+        switch (i){
+        case 2:
             ecrire_ligne("Choose your nickname",20);
-        }
-        else if(i==4){
+            break;
+        case 4:
             bas();
-        }
-        else if(i==12){
+            break;
+        case 12:
             ecrire_ligne("You will type your",18);
-        }
-        else if(i==14){
+            break;
+        case 14:
             ecrire_ligne("nickname! each in turn",22);
-        }
-        else{
+            break;
+        default:
             cadre();
+            break;
         }
     }
     bas();
@@ -326,41 +330,43 @@ void fin_choix(char nom1[25],char nom2[25],int y,int z){
 void choisir_bot(){
     haut();
     for (int i=0;i<ELLIAT;i++){
-        if(i==0){
+        switch (i){
+        case 0:
             ecrire_ligne("Choose the difficulty of the bot",32);
-        }
-        else if(i==1){
+            break;
+        case 1:
             bas();
-        }
-        else if(i==5){
+            break;
+        case 5:
             ecrire_ligne_mdg("Type '1' to play",16,"Type '2' to play",16);
-        }
-        else if(i==6){
+            break;
+        case 6:
             ecrire_ligne_mdg("on",2,"on",2);
-        }
-        else if(i==7){
+            break;
+        case 7:
             ecrire_ligne_mdg("noob",4,"easy",4);
-        }
-        else if(i==10){
+            break;
+        case 10:
             bas2();
-        }
-        else if(i==14){
+            break;
+        case 14:
             ecrire_ligne_mdg("Type '3' to play",16,"Type '4' to play",16);
-        }
-        else if(i==15){
+            break;
+        case 15:
             ecrire_ligne_mdg("on",2,"on",2);
-        }
-        else if(i==16){
+            break;
+        case 16:
             ecrire_ligne_mdg("normal",6,"hard",4);
-        }
-        else if(i==20){
+            break;
+        case 20:
             bas2();
-        }
-        else if(i==21){
+            break;
+        case 21:
             ecrire_ligne("Enter '0' to go back",20);
-        }
-        else{
+            break;
+        default:
             barre_m();
+            break;
         }
     }
     bas();
@@ -397,24 +403,26 @@ void nombrejoueur(){
 void startgame(){
     haut();
     for(int i=0;i<ELLIAT;i++){
-        if(i==0){
+        switch (i){
+        case 0:
             ecrire_ligne_droite_gauche("CY-Tech",7,"Multiplayer/Solo");
-        }
-        else if(i==8){
+            break;
+        case 8:
             ecrire_ligne("CY  FIGHTERS",12);
-        }
-        else if(i==11){
+            break;
+        case 11:
             ecrire_ligne("Enter '1' to start",18);
-        }
-        else if(i==20){
+            break;
+        case 20:
             ecrire_ligne_gauche("Evan Gobe-Truong",16);
-        }
-        else if(i==21){
+            break;
+        case 21:
             ecrire_ligne_gauche("Samuel Zerrouk",14);
-        }
-        else{
+            break;
+        default:
             cadre();
-        }   
+            break;
+        }
     }
     bas();
 }
