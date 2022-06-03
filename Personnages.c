@@ -159,7 +159,7 @@ void select_perso(){
     Personnages *c;
     for(i=0;i<3;i++){
        for(j=i;j<3;j++){
-           if ( perso_select_joueur1[i] < perso_select_joueur1[j] ) {
+           if ( perso_select_joueur1[i]->vit < perso_select_joueur1[j]->vit ) {
                 c = perso_select_joueur1[i];
                 perso_select_joueur1[i] = perso_select_joueur1[j];
                perso_select_joueur1[j] = c;
