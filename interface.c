@@ -103,6 +103,19 @@ void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]) {
 }
 
 
+void selection(){
+    haut();
+    for (int i=0;i<ELLIAT;i++){
+        switch (i){
+        case 3:
+
+            break;
+        default:
+            cadre();
+            break;
+        }
+    }
+}
 
 void list_perso1(){
     int x;

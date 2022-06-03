@@ -12,6 +12,7 @@ void ecrire_ligne_droite(char chaine[]);
 void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]);
 void ecrire_ligne_mdg(char chaine[], int len_chaine,char chaine2[], int dec2);
 
+void selection();
 void list_perso1();
 void list_perso3();
 void choix_nom();

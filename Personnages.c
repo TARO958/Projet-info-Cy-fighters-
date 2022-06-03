@@ -8,13 +8,13 @@
 
 Personnages tab[NB_Personnages]={
     {.nom = "Adrien",.type = "Tank",.point_de_vie_courante = 700 ,.point_de_vie_maximum =1000 ,.agi=0.3,.att =40,.vit = 20,.def = 0.6},
-    {.nom = "Céline",.type = "Soigneuse",.point_de_vie_courante = 250 ,.point_de_vie_maximum =1000 ,.agi=0.8,.att =70,.vit = 90,.def = 0.2},
+    {.nom = "Celine",.type = "Soigneuse",.point_de_vie_courante = 250 ,.point_de_vie_maximum =1000 ,.agi=0.8,.att =70,.vit = 90,.def = 0.2},
     {.nom = "Peter",.type = "Mage",.point_de_vie_courante = 500 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =50,.vit = 50,.def = 0.5},
     {.nom = "Lucas",.type = "Tank",.point_de_vie_courante = 750 ,.point_de_vie_maximum =1000 ,.agi=0.2,.att =30,.vit = 15,.def = 0.65},
     {.nom = "Samuel",.type = "Assasins",.point_de_vie_courante = 250 ,.point_de_vie_maximum =1000 ,.agi=0.4,.att =90,.vit = 60,.def = 0.1},
     {.nom = "Thibaut",.type = "Tank",.point_de_vie_courante = 800 ,.point_de_vie_maximum =1000 ,.agi=0.15,.att =20,.vit = 40,.def = 0.8},
     {.nom = "Sabrina",.type = "Assasins",.point_de_vie_courante = 500 ,.point_de_vie_maximum =1000 ,.agi=0.1,.att =80,.vit = 50,.def = 0.6},
-    {.nom = "Léa",.type = "Mage",.point_de_vie_courante = 150 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 30,.def = 0.4},
+    {.nom = "Lea",.type = "Mage",.point_de_vie_courante = 150 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 30,.def = 0.4},
     {.nom = "Laurie",.type = "Soigneuse",.point_de_vie_courante = 550 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 80,.def = 0.2},
     {.nom = "Theo",.type = "Gueurrier",.point_de_vie_courante = 350 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 60,.def = 0.9},
     {.nom = "Evan",.type = "Gueurrier",.point_de_vie_courante = 450 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 20,.def = 0.1},
@@ -120,11 +120,24 @@ Personnages *cherche_personnages(char *nom_personnages){
 
 void select_perso(){
     char recherche[10];
-    Personnages *perso_select[6];
-    for(int i=0;i<6;i++){
+    Personnages *perso_player1[3];
+    Personnages *perso_player2[3];
+    //selection();
+    for(int i=0;i<3;i++){
         do{
         scanf("%s",recherche);
-        perso_select[i]=cherche_personnages(recherche);
-        }while(perso_select[i]==NULL);
+        viderclavier();
+        perso_player1[i]=cherche_personnages(recherche);
+        }while(perso_player1[i]==NULL);
+        printf("You chose %s\n", perso_player1[i]->nom);
     }
+    for(int i=0;i<3;i++){
+        do{
+        scanf("%s",recherche);
+        viderclavier();
+        perso_player2[i]=cherche_personnages(recherche);
+        }while(perso_player2[i]==NULL);
+        printf("You chose %s\n", perso_player2[i]->nom);
+    }
+
 }
