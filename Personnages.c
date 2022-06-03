@@ -23,6 +23,7 @@ Personnages tab[NB_Personnages]={
 
 };
 
+<<<<<<< HEAD
 void select_engagement(Personnages perso_select_joueur1[],Personnages perso_select_joueur2[]){
 
     int i,j,c;
@@ -43,6 +44,8 @@ void select_engagement(Personnages perso_select_joueur1[],Personnages perso_sele
 
 
 }
+=======
+>>>>>>> Sam/develop
 
 void list_perso2(){
     int x;
@@ -159,6 +162,7 @@ void select_perso(){
         }
         }while(perso_select_joueur1[i]==NULL);
     }
+     
     
     for(int j=0;j<3;j++){
         do{
@@ -167,11 +171,39 @@ void select_perso(){
         perso_select_joueur2[j]=cherche_personnages(recherche);
         if(perso_select_joueur2[j]==NULL){
             printf("Ce nom n'existe pas.");
+<<<<<<< HEAD
+=======
+            
+
+
+>>>>>>> Sam/develop
         }
         else{
         printf("%s\n",perso_select_joueur2[j]->nom);
         }
         }while(&perso_select_joueur2[j]==NULL);
     }
+<<<<<<< HEAD
     select_engagement( *perso_select_joueur1, *perso_select_joueur2); 
+=======
+
+    //tri des tableaux en fonction de leurs vitesse
+    int i,j;
+    Personnages *c;
+    for(i=0;i<3;i++){
+       for(j=i;j<3;j++){
+           if ( perso_select_joueur1[i] < perso_select_joueur1[j] ) {
+                c = perso_select_joueur1[i];
+                perso_select_joueur1[i] = perso_select_joueur1[j];
+               perso_select_joueur1[j] = c;
+               
+           }
+       }
+    }
+
+    printf("%s  %f\n",perso_select_joueur1[0]->nom,perso_select_joueur1[0]->vit);   
+    printf("%s  %f\n",perso_select_joueur1[1]->nom,perso_select_joueur1[1]->vit); 
+    printf("%s  %f\n",perso_select_joueur1[2]->nom,perso_select_joueur1[2]->vit); 
+    
+>>>>>>> Sam/develop
 }
