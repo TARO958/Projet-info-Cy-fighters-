@@ -38,7 +38,7 @@ void select_engagement(Personnages perso_select_joueur1[],Personnages perso_sele
     vit2[1][2]=2;
     int a,b,d;
     for(a=0;a<3;a++){
-        for(b=i;b<3;b++){
+        for(b=a;b<3;b++){
             if ( vit2[0][a] > vit2[0][b] ) {
                 d = vit2[0][a];
                 vit2[0][a] = vit2[0][b];
@@ -51,7 +51,7 @@ void select_engagement(Personnages perso_select_joueur1[],Personnages perso_sele
             }
         }
     }   
-printf("%f  %f",perso_select_joueur1[(int)vit1[1][0]],(int)vit1[0][0]);
+printf("%c  %d",perso_select_joueur1[(int)vit1[1][0]],(int)vit1[0][0]);
 
 }
 
