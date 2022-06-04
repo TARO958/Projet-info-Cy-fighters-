@@ -142,7 +142,7 @@ void select_perso(){
                     }
                 }
                 if(trouve){
-                    printf("Error, this name doesn't exist.\n");
+                    printf("This character is already taken.\n");
                     perso_select_joueur1[i]=NULL;
                 }
                 else{
@@ -173,7 +173,7 @@ void select_perso(){
                     }
                 }
                 if(trouve){
-                    printf("Error, this name doesn't exist.\n");
+                    printf("This character is already taken.\n");
                     perso_select_joueur2[j]=NULL;
                 }
                 else{
@@ -182,5 +182,6 @@ void select_perso(){
             }
         }while(perso_select_joueur2[j]==NULL);
     }
-    tri_vit(&perso_select_joueur1,perso_select_joueur2);
+    Personnages *ordre[6];
+    trifusion(perso_select_joueur1,perso_select_joueur2,ordre);
 }

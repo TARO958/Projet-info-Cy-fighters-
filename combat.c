@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "time.h"
 #include "combat.h"
 #include "Personnages.h"
 #include "interface.h"
+
 
 void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[6],Personnages *ordre[6]){
     int a=0;
@@ -50,21 +52,6 @@ void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_jo
     }
 }
 
-void tri_vit(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
-    int i,j;
-    Personnages *ordre[6];
-    Personnages *ordre2[6];
-    for(i=0;i<6;i++){
-        if(i<3){
-            ordre[i]=perso_select_joueur1[i];
-        }
-        else{
-            ordre[i]=perso_select_joueur2[i-3];
-        }
-    }
-    trifusion(perso_select_joueur1,perso_select_joueur2,ordre2);
-}
-
 void select_actions_perso(){
     int choix_action;
     do {
@@ -83,17 +70,10 @@ void select_actions_perso(){
             default :
             break;
         }
-
-
-
     }while (choix_action != 0);
-
-
-
 }
 
-
-void action_att(Personnages attaquant,Personnages receveur){
+void action_att(Personnages *attaquant,Personnages *receveur){
     float degat,chance_esquive;
     srand(time(NULL));
     chance_esquive=rand()%11/10.0;
