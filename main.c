@@ -24,8 +24,6 @@ void choisirnmbjoueur(){
     }
 }
 
-
-
 void debut(){
     int start;
     startgame();

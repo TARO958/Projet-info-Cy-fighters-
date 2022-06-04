@@ -10,8 +10,8 @@
 void pseudoj(){
     char nom1[25];
     char nom2[25];
-    char *p;
-    int x,y,z;
+    int x;
+    int y,z;
     do{
         choix_nom();
         do{

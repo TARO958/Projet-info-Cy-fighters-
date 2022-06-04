@@ -45,6 +45,14 @@ void cadre(){
     printf("\n");
 }
 
+void barre_m(){
+    int i=TAILLE/2;
+    printf("%-*s",i,"|");
+    printf("%-*s",i-1,"|");
+    printf("%s","|");
+    printf("\n");
+}
+
 void ecrire_ligne(char chaine[], int len_chaine) {
     int decalage = (TAILLE - len_chaine) / 2;
     printf("%-*s", decalage, "|");
@@ -55,14 +63,6 @@ void ecrire_ligne(char chaine[], int len_chaine) {
         printf("%s ", chaine);
     }
     printf("%*s", decalage, "|");
-    printf("\n");
-}
-
-void barre_m(){
-    int i=TAILLE/2;
-    printf("%-*s",i,"|");
-    printf("%-*s",i-1,"|");
-    printf("%s","|");
     printf("\n");
 }
 
@@ -125,7 +125,20 @@ void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]) {
 
 
 
-
+(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
+    haut();
+    for (int i=0;i<ELLIAT;i++){
+        switch (i){
+        case 0:
+            ecrire_ligne_mdg("Equipe 1",8,"Equipe 2",8);
+            break;
+        default:
+            barre_m();
+            break;
+        }
+    }
+    bas2();
+}
 
 void selection(){
     haut();
