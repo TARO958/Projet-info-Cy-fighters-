@@ -1,10 +1,62 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "time.h"
 #include "combat.h"
 #include "Personnages.h"
-#include "interface.h"
+#include <time.h>
 
+#define NMB_perso 6 
+
+void select_actions_perso(){
+    int choix_action;
+    do {
+       printf("Quel action voulez-vous effectuer avec le perso?\n");
+        scanf("%d",&choix_action);
+        switch(choix_action){
+            case 1:
+            printf("Quel personnage voulez-vous attaquez,");
+            //liste de perso a attaquer (que l'équipe enemmie)
+            break;
+            
+            case 2:
+            printf("Sur quel personnage voulez-vous lancer votre attaque spéciale ");
+            break;
+
+            default :
+            break;
+        }
+    
+
+
+    }while (choix_action != 0);
+    
+    
+
+}
+
+
+void action_att(Personnages *attaquant,Personnages *receveur){
+    float degat,chance_esquive;
+    srand(time(NULL));
+    chance_esquive=rand()%11/10.0;
+    if (chance_esquive<receveur->agi){
+        printf("%s esquive !!",attaquant->nom);
+        degat =0;
+    }
+    else{
+          degat = attaquant->att-(attaquant->att*receveur->def);
+          if(degat > 0 ){
+        receveur->point_de_vie_courante-=degat;
+        printf("%s a pris %f point de dégat ! Il lui reste %d point de vie ! \n",receveur->nom,degat,receveur->point_de_vie_courante);
+        }
+    }
+   
+    
+}
+void action_att_spe(Personnages *attaquant,Personnages *receveur){
+    Speciales  speciale_1;
+    Speciales  speciale_2;
+
+}
 
 void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[6],Personnages *ordre[6]){
     int a=0;
@@ -49,43 +101,5 @@ void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_jo
             a+=1;
         }
     printf("%s;%f\n",ordre[i]->nom,ordre[i]->vit);
-    }
-}
-
-void select_actions_perso(){
-    int choix_action;
-    do {
-       printf("Quel action voulez-vous effectuer avec le perso?\n");
-        scanf("%d",&choix_action);
-        switch(choix_action){
-            case 1:
-            printf("Quel personnage voulez-vous attaquez,");
-            //liste de perso a attaquer (que l'équipe enemmie)
-            break;
-
-            case 2:
-            printf("Sur quel personnage voulez-vous lancer votre attaque spéciale ");
-            break;
-
-            default :
-            break;
-        }
-    }while (choix_action != 0);
-}
-
-void action_att(Personnages *attaquant,Personnages *receveur){
-    float degat,chance_esquive;
-    srand(time(NULL));
-    chance_esquive=rand()%11/10.0;
-    if (chance_esquive < receveur->agi){
-        printf("%s esquive !!",attaquant->nom);
-        degat =0;
-    }
-    else{
-          degat = attaquant->att-(attaquant->att*receveur->def);
-          if(degat > 0 ){
-        receveur->point_de_vie_courante-=degat;
-        printf("%s a pris %f point de dégat ! Il lui reste %d point de vie ! \n",receveur->nom,degat,receveur->point_de_vie_courante);
-        }
     }
 }
