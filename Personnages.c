@@ -48,7 +48,7 @@ void list_perso2(){
                 ecrire_ligne_mdg("def : 0.10",10,"def : 0.80",10);
                 break;
             case 7:
-                ecrire_ligne_mdg("vit : 60",8,"vit : 40",8);
+                ecrire_ligne_mdg("vit : 99",8,"vit : 40",8);
                 break;
             case 8:
                 ecrire_ligne_mdg("agi : 0.40",10,"agi : 0.15",10);
@@ -75,7 +75,7 @@ void list_perso2(){
                 ecrire_ligne_mdg("def : 0.60",10,"def : 0.40",10);
                 break;
             case 19:
-                ecrire_ligne_mdg("vit : 50",8,"vit : 30",8);
+                ecrire_ligne_mdg("vit : 90",8,"vit : 35",8);
                 break;
             case 20:
                 ecrire_ligne_mdg("agi : 0.10",10,"agi : 0.50",10);
@@ -122,11 +122,13 @@ void list_perso2(){
 
 void select_perso(){
     char recherche[20];
+    int trouve;
     Personnages *perso_select_joueur1[3];
     Personnages *perso_select_joueur2[3];
     selection();
     for(int i=0;i<3;i++){
         do{
+            trouve=0;
             printf("Player 1 : character %d: ",(i+1));
             scanf("%s",recherche);
             perso_select_joueur1[i]=cherche_personnages(recherche);
@@ -134,22 +136,52 @@ void select_perso(){
                 printf("Error, this name doesn't exist.\n");
             }
             else{
-                printf("%s\n",perso_select_joueur1[i]->nom);
+                for(int j=0;j<i;j++){
+                    if(perso_select_joueur1[j]==perso_select_joueur1[i]){
+                        trouve=1;
+                    }
+                }
+                if(trouve){
+                    printf("This character is already taken.\n");
+                    perso_select_joueur1[i]=NULL;
+                }
+                else{
+                    printf("%s\n",perso_select_joueur1[i]->nom);
+                }
             }
+
         }while(perso_select_joueur1[i]==NULL);
     }
     for(int j=0;j<3;j++){
         do{
+            trouve=0;
             printf("Player 2 : character %d: ",(j+1));
             scanf("%s",recherche);
             perso_select_joueur2[j]=cherche_personnages(recherche);
             if(perso_select_joueur2[j]==NULL){
                 printf("Error, this name doesn't exist.\n");
             }
-        else{
-        printf("%s\n",perso_select_joueur2[j]->nom);
-        }
-        }while(&perso_select_joueur2[j]==NULL);
+            else{
+                for(int i=0;i<j;i++){
+                    if(perso_select_joueur2[j]==perso_select_joueur2[i]){
+                        trouve=1;
+                    }
+                }
+                for(int i=0;i<3;i++){
+                    if(perso_select_joueur2[j]==perso_select_joueur1[i]){
+                        trouve=1;
+                    }
+                }
+                if(trouve){
+                    printf("This character is already taken.\n");
+                    perso_select_joueur2[j]=NULL;
+                }
+                else{
+                    printf("%s\n",perso_select_joueur2[j]->nom);
+                }
+            }
+        }while(perso_select_joueur2[j]==NULL);
     }
-    tri_vit(&perso_select_joueur1,perso_select_joueur2);
+    Personnages *ordre[6];
+    trifusion(perso_select_joueur1,perso_select_joueur2,ordre);
 }
