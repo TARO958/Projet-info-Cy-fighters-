@@ -125,7 +125,7 @@ void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]) {
 
 
 
-(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
+void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
     haut();
     for (int i=0;i<ELLIAT;i++){
         switch (i){
