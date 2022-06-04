@@ -49,7 +49,7 @@ void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_jo
             a+=1;
         }
     printf("%s;%f\n",ordre[i]->nom,ordre[i]->vit);
-    }
+    }  
 }
 
 void select_actions_perso(){
