@@ -149,7 +149,6 @@ void select_perso(){
                     printf("%s\n",perso_select_joueur1[i]->nom);
                 }
             }
-
         }while(perso_select_joueur1[i]==NULL);
     }
     for(int j=0;j<3;j++){
