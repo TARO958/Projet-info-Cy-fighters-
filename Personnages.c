@@ -133,7 +133,7 @@ void select_perso(){
             scanf("%s",recherche);
             perso_select_joueur1[i]=cherche_personnages(recherche);
             if(perso_select_joueur1[i]==NULL){
-                printf("Error, this name doesn't exist.\n");
+                printf("Error, this character doesn't exist.\n");
             }
             else{
                 for(int j=0;j<i;j++){
@@ -159,7 +159,7 @@ void select_perso(){
             scanf("%s",recherche);
             perso_select_joueur2[j]=cherche_personnages(recherche);
             if(perso_select_joueur2[j]==NULL){
-                printf("Error, this name doesn't exist.\n");
+                printf("Error, this character doesn't exist.\n");
             }
             else{
                 for(int i=0;i<j;i++){
