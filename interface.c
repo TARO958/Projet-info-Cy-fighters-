@@ -86,6 +86,32 @@ void ecrire_ligne_mdg(char chaine[], int len_chaine,char chaine2[], int dec2){
     printf("\n");
 }
 
+void ecrire_ligne_mdgint(int hp, int len_chaine,int hp2, int dec2){
+    if(hp<100){
+        len_chaine=2;
+    }
+    if(hp2<100){
+        dec2=2;
+    }
+    int decalage = (44 - len_chaine)/2;
+    int decalage2 =(44 - dec2)/2;
+    printf("%-*s", decalage, "|");
+    if(len_chaine%2==1){
+        printf("%-*d", decalage+len_chaine+1, hp);
+    }
+    else{
+    printf("%-*s", decalage+len_chaine, hp);
+    }
+    printf("%-*s", decalage2, "|");
+    if(dec2%2==1){
+        printf("%s%*s", hp2, decalage2+1, "|");
+    }
+    else{
+    printf("%s%*s", hp2, decalage2, "|");
+    }
+    printf("\n");
+}
+
 void ecrire_ligne_dg(char chaine[], int len_chaine,char chaine2[], int dec2){
     int decalage = (44 - len_chaine)/2;
     int decalage2 =(44 - dec2)/2;
@@ -125,12 +151,25 @@ void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]) {
 
 
 
-(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
+void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
+    int x,y,z,a,b,c;
+    x=strlen(perso_select_joueur1[0]->nom);
+    y=strlen(perso_select_joueur1[1]->nom);
+    z=strlen(perso_select_joueur1[2]->nom);
+    a=strlen(perso_select_joueur2[0]->nom);
+    b=strlen(perso_select_joueur2[1]->nom);
+    c=strlen(perso_select_joueur2[2]->nom);
     haut();
     for (int i=0;i<ELLIAT;i++){
         switch (i){
         case 0:
-            ecrire_ligne_mdg("Equipe 1",8,"Equipe 2",8);
+            ecrire_ligne_mdg("[Equipe 1]",10,"[Equipe 2]",10);
+            break;
+        case 2:
+            ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
+            break;
+        case 3:
+            ecrire_ligne_mdgint(perso_select_joueur1[0]->point_de_vie_courante,3,perso_select_joueur2[0]->point_de_vie_courante,3);
             break;
         default:
             barre_m();
