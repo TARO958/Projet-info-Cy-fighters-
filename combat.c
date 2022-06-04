@@ -65,7 +65,7 @@ void fight(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur
 void select_actions_perso(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
     int choix_action;
     do {
-        printf("Quel action voulez-vous effectuer avec le perso?\n");
+        effectuer_action(attaquant,perso_select_joueur1,perso_select_joueur2);
         scanf("%d",&choix_action);
         switch(choix_action){
             case 1:
