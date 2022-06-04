@@ -11,3 +11,5 @@ struct Speciales{
     int nb_tours_rechargement;
     
 };
+
+void action_att_spe();
