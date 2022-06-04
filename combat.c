@@ -4,11 +4,12 @@
 #include "Personnages.h"
 #include "interface.h"
 
-void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *ordre[6]){
+void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[6],Personnages *ordre[6]){
     int a=0;
     int b=0;
     int i,j;
     Personnages *c;
+    Personnages *c2;
     for(i=0;i<3;i++){
        for(j=i;j<3;j++){
            if ( perso_select_joueur1[i]->vit < perso_select_joueur1[j]->vit ){
@@ -21,25 +22,31 @@ void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_jo
     for(i=0;i<3;i++){
        for(j=i;j<3;j++){
            if ( perso_select_joueur2[i]->vit < perso_select_joueur2[j]->vit ){
-                c = perso_select_joueur2[i];
+                c2 = perso_select_joueur2[i];
                 perso_select_joueur2[i] = perso_select_joueur2[j];
-                perso_select_joueur2[j] = c;
+                perso_select_joueur2[j] = c2;
            }
        }
     }
     for(i=0;i<6;i++){
-        if(perso_select_joueur1[a]->vit < perso_select_joueur2[b]->vit){
+        if(a>2){
+            ordre[i]=perso_select_joueur2[b];
+            b+=1;
+        }
+        else if(b>2){
             ordre[i]=perso_select_joueur1[a];
-            a++;
+            a+=1;
+        }
+        else if( perso_select_joueur1[a]->vit < perso_select_joueur2[b]->vit){
+
+            ordre[i]=perso_select_joueur2[b];
+            b+=1;
         }
         else{
-            ordre[i]=perso_select_joueur2[b];
-            b++;
+            ordre[i]=perso_select_joueur1[a];
+            a+=1;
         }
-    }
-    for(i=0;i<6;i++){
-        printf("%s;%f\n",ordre[i]->nom,ordre[i]->vit);
-
+    printf("%s;%f\n",ordre[i]->nom,ordre[i]->vit);
     }
 }
 
