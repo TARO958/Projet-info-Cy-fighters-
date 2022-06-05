@@ -8,7 +8,7 @@
 #include "bot.h"
 
 
-void bot_fight(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *ordre[6],int bot){
+void bot_fight(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *ordre[6],int bot){       //meme chose que le combat mais simplifier + bot.
     do{
         for(int i=0;i<6;i++){
             for (int j=0;j<6;j++){
@@ -274,11 +274,8 @@ void bot_fin_combat( Personnages *perso_select_joueur1[3], Personnages *perso_se
     if(perso_select_joueur2[0]->point_de_vie_courante==0 && perso_select_joueur2[1]->point_de_vie_courante==0 && perso_select_joueur2[2]->point_de_vie_courante==0){
         gagnant(perso_select_joueur1);
     }
-    else if(perso_select_joueur1[0]->point_de_vie_courante==0 && perso_select_joueur1[1]->point_de_vie_courante==0 && perso_select_joueur1[2]->point_de_vie_courante==0){
-        gagnant(perso_select_joueur2);
-    }
     else{
-        gagnant_draw(perso_select_joueur1,perso_select_joueur2);
+        gagnant(perso_select_joueur2);
     }
     exit(0);
 }

@@ -13,7 +13,7 @@
 void choisirnmbjoueur(){
     int nmb;
     do{
-        nombrejoueur();
+        nombrejoueur();     //affichage
         scanf("%d",&nmb);
         viderclavier();
     } while (nmb != 1 && nmb != 2);
@@ -27,9 +27,9 @@ void choisirnmbjoueur(){
 
 void debut(){
     int start;
-    startgame();
+    startgame();            //affichage
     scanf("%d",&start);
-    viderclavier();
+    viderclavier();     //fonction qui regle les problemes de scanf
     if(start!=1){
         exit(0);
     }

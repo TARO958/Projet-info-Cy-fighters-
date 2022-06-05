@@ -49,7 +49,7 @@ Personnages tab[NB_Personnages]={
     {.nom = "Enzo",.type = "Assassin",.point_de_vie_courante = 375 ,.point_de_vie_maximum =1000 ,.agi=0.2,.att =60,.vit = 95,.def = 0.35,.att_spe1=&spe[16],.att_spe2=&spe[21]},
 };
 
-void list_perso2(){
+void list_perso2(){         //un afffichage de personnage
     int x;
     do{
     haut();
@@ -136,7 +136,7 @@ void list_perso2(){
     }while(x!=0);
 }
 
- Personnages *cherche_personnages(char *nom_personnages){
+ Personnages *cherche_personnages(char *nom_personnages){   //comparateur pour selection personnages.
     for(int i=0;i<NB_Personnages;i++){
         if(strcmpi(tab[i].nom,nom_personnages)==0){
             
@@ -147,7 +147,7 @@ void list_perso2(){
     return NULL;
 }
 
-void select_perso(){
+void select_perso(){                //selection avec 2 joueurs.
     char recherche[20];
     int trouve;
     Personnages *perso_select_joueur1[3];
@@ -215,11 +215,10 @@ void select_perso(){
 
 
 
-//pour le bot
 
 
 
-void perso_bot(int bot){
+void perso_bot(int bot){ // selection pour joueur+bot
     char recherche[20];
     int trouve;
     Personnages *perso_select_joueur1[3];

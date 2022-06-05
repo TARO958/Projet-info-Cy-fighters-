@@ -8,7 +8,7 @@
 #include "dif.h"
 #include "personnages.h"
 
-void viderclavier(){
+void viderclavier(){                // la fonction que regle les problemes de scanf
     for (int c = 0; c!='\n' && c!=EOF; c = getchar());
 }
 
@@ -20,7 +20,7 @@ void choisir_dif(){
         viderclavier();
         switch (bot){
         case 0:
-            choisirnmbjoueur();
+            choisirnmbjoueur();     //revenir avant
             break;
         case 1:
             perso_bot(bot);

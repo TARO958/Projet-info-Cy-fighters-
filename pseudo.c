@@ -7,7 +7,7 @@
 #include "interface.h"
 #include "dif.h"
 
-void pseudoj(){
+void pseudoj(){     
     char nom1[25];
     char nom2[25];
     int x;

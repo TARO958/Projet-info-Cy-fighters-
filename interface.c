@@ -9,6 +9,9 @@
 #define TAILLE 88
 #define ELLIAT 22
 
+
+//plusieur fonction permettant l'affichage par ligne
+
 void haut(){
     int i;
     printf(" ");
@@ -177,6 +180,11 @@ void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]) {
 
 
 
+
+
+//affichage de chaque cadre
+
+
 void gagnant(Personnages *gagnant[3]){
     int a,b,c;
     a=strlen(gagnant[0]->nom);
@@ -199,58 +207,6 @@ void gagnant(Personnages *gagnant[3]){
             break;
         case 11:
             ecrire_ligne(gagnant[2]->nom,c);
-            break;
-        case 16:
-            ecrire_ligne("Thank you for playing",21);
-            break;
-        case 20:
-            ecrire_ligne_gauche("Evan Gobe-Truong",16);
-            break;
-        case 21:
-            ecrire_ligne_gauche("Samuel Zerrouk",14);
-            break;
-        default:
-            cadre();
-            break;
-        }
-    }
-    bas();
-}
-
-void gagnant_draw(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
-    int a,b,c,x,y,z;
-    x=strlen(perso_select_joueur1[0]->nom);
-    y=strlen(perso_select_joueur1[1]->nom);
-    z=strlen(perso_select_joueur1[2]->nom);
-    a=strlen(perso_select_joueur2[0]->nom);
-    b=strlen(perso_select_joueur2[1]->nom);
-    c=strlen(perso_select_joueur2[2]->nom);
-    haut();
-    for (int i=0;i<ELLIAT;i++){
-        switch (i){
-        case 3:
-            ecrire_ligne("CY Fighters",11);
-            break;
-        case 7:
-            ecrire_ligne("The winners are :",17);
-            break;
-        case 8:
-            bas();
-            break;
-        case 9:
-            barre_m();
-            break;
-        case 10:
-            ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
-            break;
-        case 11:
-            ecrire_ligne_mdg(perso_select_joueur1[1]->nom, y, perso_select_joueur2[1]->nom, b);
-            break;
-        case 12:
-            ecrire_ligne_mdg(perso_select_joueur1[2]->nom,z,perso_select_joueur2[2]->nom,c);
-            break;
-        case 13:
-            bas2();
             break;
         case 16:
             ecrire_ligne("Thank you for playing",21);
@@ -656,7 +612,7 @@ void list_perso1(){
         }
     }while(x!=0);  
 }
-
+                                // la liste 2 est situer dans personnages.c pour des raisons techniques.
 void list_perso3(){
     int x;
     do{

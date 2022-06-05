@@ -35,7 +35,7 @@ Speciales special[NB_ATT_SPE]={
 };
 
 
-void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *ordre[6]){
+void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *ordre[6]){            //tri les vit des perso pour savoir qui commence(le systeme de vitesse n'est pas de meme que dans raid shadow legend)
     int a=0;
     int b=0;
     int i,j;
@@ -481,11 +481,8 @@ void fin_combat( Personnages *perso_select_joueur1[3], Personnages *perso_select
     if(perso_select_joueur2[0]->point_de_vie_courante==0 && perso_select_joueur2[1]->point_de_vie_courante==0 && perso_select_joueur2[2]->point_de_vie_courante==0){
         gagnant(perso_select_joueur1);
     }
-    else if(perso_select_joueur1[0]->point_de_vie_courante==0 && perso_select_joueur1[1]->point_de_vie_courante==0 && perso_select_joueur1[2]->point_de_vie_courante==0){
-        gagnant(perso_select_joueur2);
-    }
     else{
-        gagnant_draw(perso_select_joueur1,perso_select_joueur2);
+        gagnant(perso_select_joueur2);
     }
     exit(0);
 }
