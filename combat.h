@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 
-void trivit();
+void trifusion();
 void fight();
 void select_actions_perso();
 void select_adversaire();
