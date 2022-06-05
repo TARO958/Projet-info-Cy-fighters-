@@ -12,7 +12,9 @@ In this game, we chose our bots to have 4 levels of difficulty, "noob" one can o
 
 # How to start the game
 ```
-
+To start the game, you have to tape 1 .
+Afterwards, you have to choose between playing solo or in multiplayer.
+Then, choose the name of the teams of the two players if you choose one or choose the difficulty of the bot if you choose 2, tape 1 and the figth begin after the selction of chracters.
 ```
 
 
