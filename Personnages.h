@@ -24,3 +24,6 @@ typedef struct Personnages Personnages;
 Personnages *cherche_personnages(char*nom_personnages);
 void list_perso2();
 void select_perso();
+
+void perso_bot();
+void bot_trifusion_();

@@ -8,6 +8,7 @@
 #include "dif.h"
 #include "Personnages.h"
 #include "combat.h"
+#include "bot.h"
 
 void choisirnmbjoueur(){
     int nmb;

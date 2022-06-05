@@ -177,6 +177,98 @@ void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]) {
 
 
 
+void gagnant(Personnages *gagnant[3]){
+    int a,b,c;
+    a=strlen(gagnant[0]->nom);
+    b=strlen(gagnant[1]->nom);
+    c=strlen(gagnant[2]->nom);
+    haut();
+    for (int i=0;i<ELLIAT;i++){
+        switch (i){
+        case 3:
+            ecrire_ligne("CY Fighters",11);
+            break;
+        case 7:
+            ecrire_ligne("The winners are :",17);
+            break;
+        case 9:
+            ecrire_ligne(gagnant[0]->nom,a);
+            break;
+        case 10:
+            ecrire_ligne(gagnant[1]->nom,b);
+            break;
+        case 11:
+            ecrire_ligne(gagnant[2]->nom,c);
+            break;
+        case 16:
+            ecrire_ligne("Thank you for playing",21);
+            break;
+        case 20:
+            ecrire_ligne_gauche("Evan Gobe-Truong",16);
+            break;
+        case 21:
+            ecrire_ligne_gauche("Samuel Zerrouk",14);
+            break;
+        default:
+            cadre();
+            break;
+        }
+    }
+    bas();
+}
+
+void gagnant_draw(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
+    int a,b,c,x,y,z;
+    x=strlen(perso_select_joueur1[0]->nom);
+    y=strlen(perso_select_joueur1[1]->nom);
+    z=strlen(perso_select_joueur1[2]->nom);
+    a=strlen(perso_select_joueur2[0]->nom);
+    b=strlen(perso_select_joueur2[1]->nom);
+    c=strlen(perso_select_joueur2[2]->nom);
+    haut();
+    for (int i=0;i<ELLIAT;i++){
+        switch (i){
+        case 3:
+            ecrire_ligne("CY Fighters",11);
+            break;
+        case 7:
+            ecrire_ligne("The winners are :",17);
+            break;
+        case 8:
+            bas();
+            break;
+        case 9:
+            barre_m();
+            break;
+        case 10:
+            ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
+            break;
+        case 11:
+            ecrire_ligne_mdg(perso_select_joueur1[1]->nom, y, perso_select_joueur2[1]->nom, b);
+            break;
+        case 12:
+            ecrire_ligne_mdg(perso_select_joueur1[2]->nom,z,perso_select_joueur2[2]->nom,c);
+            break;
+        case 13:
+            bas2();
+            break;
+        case 16:
+            ecrire_ligne("Thank you for playing",21);
+            break;
+        case 20:
+            ecrire_ligne_gauche("Evan Gobe-Truong",16);
+            break;
+        case 21:
+            ecrire_ligne_gauche("Samuel Zerrouk",14);
+            break;
+        default:
+            cadre();
+            break;
+        }
+    }
+    bas();
+}
+
 void choix_adversaire(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *adversaire[3]){
     int x,y,z,a,b,c,att,m,n,o,p,q,r,d,e,f;
     x=strlen(perso_select_joueur1[0]->nom);
@@ -199,7 +291,7 @@ void choix_adversaire(Personnages *attaquant,Personnages *perso_select_joueur1[3
     for (int i=0;i<ELLIAT;i++){
         switch (i){
         case 0:
-            ecrire_ligne_mdg("[Equipe 1]",10,"[Equipe 2]",10);
+            ecrire_ligne_mdg("[Team 1]",8,"[Team 2]",8);
             break;
         case 2:
             ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
@@ -232,25 +324,25 @@ void choix_adversaire(Personnages *attaquant,Personnages *perso_select_joueur1[3
             bas2();
             break;
         case 14:
-            ecrire_ligne("it's the turn of :",18);
+            ecrire_ligne("Character playing now :",23);
             break;
         case 15:
             ecrire_ligne(attaquant->nom,att);
             break;
         case 16:
-            ecrire_ligne("Type '1' to focus :",19);
+            ecrire_ligne("Type '1' to target :",20);
             break;
         case 17:
             ecrire_ligne(adversaire[0]->nom,d);
             break;
         case 18:
-            ecrire_ligne("Type '2' to focus :",19);
+            ecrire_ligne("Type '2' to target :",20);
             break;
         case 19:
             ecrire_ligne(adversaire[1]->nom,e);
             break;
         case 20:
-            ecrire_ligne("Type '3' to focus :",19);
+            ecrire_ligne("Type '3' to target :",20);
             break;
         case 21:
             ecrire_ligne(adversaire[2]->nom,f);
@@ -285,7 +377,7 @@ void choix_heal(Personnages *attaquant,Personnages *perso_select_joueur1[3],Pers
     for (int i=0;i<ELLIAT;i++){
         switch (i){
         case 0:
-            ecrire_ligne_mdg("[Equipe 1]",10,"[Equipe 2]",10);
+            ecrire_ligne_mdg("[Team 1]",8,"[Team 2]",8);
             break;
         case 2:
             ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
@@ -318,7 +410,7 @@ void choix_heal(Personnages *attaquant,Personnages *perso_select_joueur1[3],Pers
             bas2();
             break;
         case 14:
-            ecrire_ligne("it's the turn of :",18);
+            ecrire_ligne("Character playing now :",23);
             break;
         case 15:
             ecrire_ligne(attaquant->nom,att);
@@ -368,7 +460,7 @@ void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3
     for (int i=0;i<ELLIAT;i++){
         switch (i){
         case 0:
-            ecrire_ligne_mdg("[Equipe 1]",10,"[Equipe 2]",10);
+            ecrire_ligne_mdg("[Team 1]",8,"[Team 2]",8);
             break;
         case 2:
             ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
@@ -401,13 +493,13 @@ void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3
             bas2();
             break;
         case 14:
-            ecrire_ligne("it's the turn of :",18);
+            ecrire_ligne("Character playing now :",13);
             break;
         case 15:
             ecrire_ligne(attaquant->nom,att);
             break;
         case 16:
-            ecrire_ligne("Type '1' to use normal attack",29);
+            ecrire_ligne("Type '1' to use a normal attack :",33);
             break;
         case 17:
             if(attaquant->att<100){
@@ -418,13 +510,13 @@ void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3
             }
             break;
         case 18:
-            ecrire_ligne("Type '2' to use your first special attack every 2 round",55);
+            ecrire_ligne("Type '2' to use your first special attack :",43);
             break;
         case 19:
                 ecrire_ligneint(attaquant->att_spe1->valeur,12);
             break;
         case 20:
-            ecrire_ligne("Type '3' to use your second special attack every 10 round",57);
+            ecrire_ligne("Type '3' to use your second special attack :",44);
             break;
         case 21:
                 ecrire_ligneint(attaquant->att_spe2->valeur,12);
@@ -764,7 +856,7 @@ void nombrejoueur(){
             ecrire_ligne_mdg("Play with ",10,"Play against",12);
         }
         else if(i==16){
-            ecrire_ligne_mdg("your friend!",12,"a bot!",6);
+            ecrire_ligne_mdg("your friend",11,"a bot",5);
         }
         else if(i==18){
             ecrire_ligne_mdg("for a lot of fun",16,"with many difficulties",22);
