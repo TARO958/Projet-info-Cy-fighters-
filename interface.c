@@ -250,7 +250,93 @@ void choix_adversaire(Personnages *attaquant,Personnages *perso_select_joueur1[3
             ecrire_ligne(adversaire[1]->nom,e);
             break;
         case 20:
-            ecrire_ligne("Type '2' to focus :",19);
+            ecrire_ligne("Type '3' to focus :",19);
+            break;
+        case 21:
+            ecrire_ligne(adversaire[2]->nom,f);
+            break;
+        default:
+            barre_m();
+            break;
+        }
+    }
+    bas();
+}
+
+void choix_heal(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *adversaire[3]){
+    int x,y,z,a,b,c,att,m,n,o,p,q,r,d,e,f;
+    x=strlen(perso_select_joueur1[0]->nom);
+    y=strlen(perso_select_joueur1[1]->nom);
+    z=strlen(perso_select_joueur1[2]->nom);
+    a=strlen(perso_select_joueur2[0]->nom);
+    b=strlen(perso_select_joueur2[1]->nom);
+    c=strlen(perso_select_joueur2[2]->nom);
+    att=strlen(attaquant->nom);
+    m=strlen(perso_select_joueur1[0]->type);
+    n=strlen(perso_select_joueur1[1]->type);
+    o=strlen(perso_select_joueur1[2]->type);
+    p=strlen(perso_select_joueur2[0]->type);
+    q=strlen(perso_select_joueur2[1]->type);
+    r=strlen(perso_select_joueur2[2]->type);
+    d=strlen(adversaire[0]->nom);
+    e=strlen(adversaire[1]->nom);
+    f=strlen(adversaire[2]->nom);
+    haut();
+    for (int i=0;i<ELLIAT;i++){
+        switch (i){
+        case 0:
+            ecrire_ligne_mdg("[Equipe 1]",10,"[Equipe 2]",10);
+            break;
+        case 2:
+            ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
+            break;
+        case 3:
+            ecrire_ligne_mdg(perso_select_joueur1[0]->type,m,perso_select_joueur2[0]->type,p);
+            break;
+        case 4:
+            ecrire_ligne_mdgint(perso_select_joueur1[0]->point_de_vie_courante,3,perso_select_joueur2[0]->point_de_vie_courante,3);
+            break;
+        case 6:
+            ecrire_ligne_mdg(perso_select_joueur1[1]->nom, y, perso_select_joueur2[1]->nom, b);
+            break;
+        case 7:
+            ecrire_ligne_mdg(perso_select_joueur1[1]->type,n,perso_select_joueur2[1]->type,q);
+            break;
+        case 8:
+            ecrire_ligne_mdgint(perso_select_joueur1[1]->point_de_vie_courante,3,perso_select_joueur2[1]->point_de_vie_courante,3);
+            break;
+        case 10:
+            ecrire_ligne_mdg(perso_select_joueur1[2]->nom,z,perso_select_joueur2[2]->nom,c);
+            break;
+        case 11:
+            ecrire_ligne_mdg(perso_select_joueur1[2]->type,o,perso_select_joueur2[2]->type,r);
+            break;
+        case 12:
+            ecrire_ligne_mdgint(perso_select_joueur1[2]->point_de_vie_courante,3,perso_select_joueur2[2]->point_de_vie_courante,3);
+            break;
+        case 13:
+            bas2();
+            break;
+        case 14:
+            ecrire_ligne("it's the turn of :",18);
+            break;
+        case 15:
+            ecrire_ligne(attaquant->nom,att);
+            break;
+        case 16:
+            ecrire_ligne("Type '1' to heal :",18);
+            break;
+        case 17:
+            ecrire_ligne(adversaire[0]->nom,d);
+            break;
+        case 18:
+            ecrire_ligne("Type '2' to heal :",18);
+            break;
+        case 19:
+            ecrire_ligne(adversaire[1]->nom,e);
+            break;
+        case 20:
+            ecrire_ligne("Type '3' to heal :",18);
             break;
         case 21:
             ecrire_ligne(adversaire[2]->nom,f);
@@ -335,12 +421,7 @@ void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3
             ecrire_ligne("Type '2' to use your first special attack every 2 round",55);
             break;
         case 19:
-            if(attaquant->att<100){
-                ecrire_ligneint(attaquant->att_spe1->valeur,11);
-            }
-            else{
                 ecrire_ligneint(attaquant->att_spe1->valeur,12);
-            }
             break;
         case 20:
             ecrire_ligne("Type '3' to use your second special attack every 10 round",57);
