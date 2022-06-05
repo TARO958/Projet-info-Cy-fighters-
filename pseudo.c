@@ -23,9 +23,6 @@ void pseudoj(){
             viderclavier();
             scanf("%s",nom2);
             z=strlen(nom2);
-            if(z%2==1){
-                z;
-            }
             viderclavier();
             if(y>25 || z>25){
                 printf("error your nickname can't be that long, try with another one shorter\n");
