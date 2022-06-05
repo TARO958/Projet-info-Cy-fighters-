@@ -68,6 +68,12 @@ void ecrire_ligne(char chaine[], int len_chaine) {
 }
 
 void ecrire_ligneint(int att, int len_chaine) {
+    if(att<100){
+        len_chaine=11;
+    }
+    else if(att<10){
+        len_chaine=12;
+    }
     int decalage = (TAILLE - len_chaine) / 2;
     printf("%-*s", decalage, "|");
     if (len_chaine % 2 == 0) 
@@ -326,18 +332,21 @@ void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3
             }
             break;
         case 18:
-            ecrire_ligne("Type '2' to use your first special attack",41);
+            ecrire_ligne("Type '2' to use your first special attack every 2 round",55);
             break;
         case 19:
-            //mettre les degat de l'attaque spécial
-            cadre();
+            if(attaquant->att<100){
+                ecrire_ligneint(attaquant->att_spe1->valeur,11);
+            }
+            else{
+                ecrire_ligneint(attaquant->att_spe1->valeur,12);
+            }
             break;
         case 20:
-            ecrire_ligne("Type '3' to use your second special attack",42);
+            ecrire_ligne("Type '3' to use your second special attack every 10 round",57);
             break;
         case 21:
-            //mettre les degat de l'attaque spécial
-            cadre();
+                ecrire_ligneint(attaquant->att_spe2->valeur,12);
             break;
         default:
             barre_m();

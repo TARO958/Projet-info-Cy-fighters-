@@ -33,6 +33,7 @@ Speciales spe[NB_ATT_SPE]={
 };
 
 
+
 void action_att_spe(Personnages *attaquant,Personnages *receveur){
     
 
