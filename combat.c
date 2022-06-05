@@ -63,6 +63,18 @@ void fight(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur
     fin_combat(perso_select_joueur1,perso_select_joueur2);
 }
 
+void fin_combat( Personnages *perso_select_joueur1[3], Personnages *perso_select_joueur2[3]){
+    if(perso_select_joueur1[0]->point_de_vie_courante > perso_select_joueur2[0]->point_de_vie_courante && perso_select_joueur1[1]->point_de_vie_courante >perso_select_joueur2[1]->point_de_vie_courante && perso_select_joueur1[2]->point_de_vie_courante>perso_select_joueur2[2]->point_de_vie_courante){
+        printf("\n le joueur 1 à gagné la partie !!\n");
+
+     }
+    else if(perso_select_joueur1[0]->point_de_vie_courante < perso_select_joueur2[0]->point_de_vie_courante && perso_select_joueur1[1]->point_de_vie_courante < perso_select_joueur2[1]->point_de_vie_courante && perso_select_joueur1[2]->point_de_vie_courante < perso_select_joueur2[2]->point_de_vie_courante){
+        printf("\n le joueur 2 a gagné la partie !!\n");
+    }
+    
+
+}
+
 void select_actions_perso(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
     int choix_action;
     do {
