@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "interface.h"
 #include "pseudo.h"
 #include "dif.h"
@@ -86,28 +87,34 @@ void ecrire_ligne_mdg(char chaine[], int len_chaine,char chaine2[], int dec2){
     printf("\n");
 }
 
-void ecrire_ligne_mdgint(int hp, int len_chaine,int hp2, int dec2){
+void ecrire_ligne_mdgint(float hp, int len_chaine,float hp2, int dec2){
     if(hp<100){
         len_chaine=2;
     }
+    else if(hp<10){
+        len_chaine=1;
+    }
     if(hp2<100){
         dec2=2;
+    }
+    if(hp2<10){
+        dec2=1;
     }
     int decalage = (44 - len_chaine)/2;
     int decalage2 =(44 - dec2)/2;
     printf("%-*s", decalage, "|");
     if(len_chaine%2==1){
-        printf("%-*d", decalage+len_chaine+1, hp);
+        printf("%-*d", decalage+len_chaine+1,(int)hp);
     }
     else{
-    printf("%-*s", decalage+len_chaine, hp);
+    printf("%-*d", decalage+len_chaine, (int)hp);
     }
     printf("%-*s", decalage2, "|");
     if(dec2%2==1){
-        printf("%s%*s", hp2, decalage2+1, "|");
+        printf("%d%*s ", (int)hp2, decalage2+1, "|");
     }
     else{
-    printf("%s%*s", hp2, decalage2, "|");
+    printf("%d%*s", (int)hp2, decalage2, "|");
     }
     printf("\n");
 }
@@ -152,13 +159,14 @@ void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]) {
 
 
 void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
-    int x,y,z,a,b,c;
+    int x,y,z,a,b,c,att;
     x=strlen(perso_select_joueur1[0]->nom);
     y=strlen(perso_select_joueur1[1]->nom);
     z=strlen(perso_select_joueur1[2]->nom);
     a=strlen(perso_select_joueur2[0]->nom);
     b=strlen(perso_select_joueur2[1]->nom);
     c=strlen(perso_select_joueur2[2]->nom);
+    att=strlen(attaquant->nom);
     haut();
     for (int i=0;i<ELLIAT;i++){
         switch (i){
@@ -168,27 +176,60 @@ void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3
         case 2:
             ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
             break;
-        case 4:
+        case 3:
             ecrire_ligne_mdgint(perso_select_joueur1[0]->point_de_vie_courante,3,perso_select_joueur2[0]->point_de_vie_courante,3);
             break;
-        case 6:
+        case 5:
             ecrire_ligne_mdg(perso_select_joueur1[1]->nom, y, perso_select_joueur2[1]->nom, b);
             break;
-        case 8:
+        case 6:
             ecrire_ligne_mdgint(perso_select_joueur1[1]->point_de_vie_courante,3,perso_select_joueur2[1]->point_de_vie_courante,3);
             break;
-        case 10:
+        case 8:
             ecrire_ligne_mdg(perso_select_joueur1[2]->nom,z,perso_select_joueur2[2]->nom,c);
             break;
-        case 12:
+        case 9:
             ecrire_ligne_mdgint(perso_select_joueur1[2]->point_de_vie_courante,3,perso_select_joueur2[2]->point_de_vie_courante,3);
+            break;
+        case 11:
+            bas2();
+            break;
+        case 12:
+            cadre();
+            break;
+        case 13:
+            ecrire_ligne(attaquant->nom,att);
+            break;
+        case 14:
+            ecrire_ligne("Type '1' for basic attack, '2' for first special attack",55);
+            break;
+        case 15:
+            ecrire_ligne("or '3' for second special attack",32);
+            break;
+        case 16:
+            cadre();
+            break;
+        case 17:
+            cadre();
+            break;
+        case 18:
+            cadre();
+            break;
+        case 19:
+            cadre();
+            break;
+        case 20:
+            cadre();
+            break;
+        case 21:
+            cadre();
             break;
         default:
             barre_m();
             break;
         }
     }
-    bas2();
+    bas();
 }
 
 void selection(){
@@ -226,7 +267,6 @@ void selection(){
             ecrire_ligne_dg("Evan",4,"Enzo",4);
             break;
         default:
-
             cadre();
             break;
         }
