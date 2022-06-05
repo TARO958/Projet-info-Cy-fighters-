@@ -85,8 +85,7 @@ void select_adversaire(Personnages *attaquant,Personnages *perso_select_joueur1[
     int x,y;
     if (attaquant==perso_select_joueur1[0] || attaquant==perso_select_joueur1[1] || attaquant==perso_select_joueur1[2]){
         do{
-            printf("choix advaire\n");
-            //interface choix ennemi
+            choix_adversaire(attaquant,perso_select_joueur1,perso_select_joueur2,perso_select_joueur2);
             scanf("%d",&x);
             viderclavier();
             switch (x){
@@ -106,8 +105,7 @@ void select_adversaire(Personnages *attaquant,Personnages *perso_select_joueur1[
     }
     else if (attaquant==perso_select_joueur2[0] || attaquant==perso_select_joueur2[1] || attaquant==perso_select_joueur2[2]){
         do{
-            printf("choix advaire\n");
-            //interface choix ennemi
+            choix_adversaire(attaquant,perso_select_joueur1,perso_select_joueur2,perso_select_joueur1);
             scanf("%d",&y);
             viderclavier();
             switch (y){
