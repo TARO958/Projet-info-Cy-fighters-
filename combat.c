@@ -6,6 +6,7 @@
 #include "interface.h"
 #include "dif.h"
 
+
 void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *ordre[6]){
     int a=0;
     int b=0;
@@ -26,13 +27,31 @@ void trifusion(Personnages *perso_select_joueur1[3],Personnages *perso_select_jo
            if ( perso_select_joueur2[i]->vit < perso_select_joueur2[j]->vit ){
                 c2 = perso_select_joueur2[i];
                 perso_select_joueur2[i] = perso_select_joueur2[j];
-
-
+                perso_select_joueur2[j] = c2;
+           }
+       }
+    }
+    for(i=0;i<6;i++){
+        if(a>2){
+            ordre[i]=perso_select_joueur2[b];
+            b+=1;
+        }
+        else if(b>2){
+            ordre[i]=perso_select_joueur1[a];
+            a+=1;
+        }
+        else if( perso_select_joueur1[a]->vit < perso_select_joueur2[b]->vit){
+            ordre[i]=perso_select_joueur2[b];
+            b+=1;
+        }
+        else{
+            ordre[i]=perso_select_joueur1[a];
             a+=1;
         }
     }
     fight(perso_select_joueur1,perso_select_joueur2,ordre);
 }
+
 
 
 void fight(Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *ordre[6]){
@@ -105,6 +124,7 @@ void select_adversaire(Personnages *attaquant,Personnages *perso_select_joueur1[
         }while(y!=1 && y!=2 && y!=3);
     }
 }
+
 void action_att(Personnages *attaquant,Personnages *receveur){
     float degat,chance_esquive;
     srand(time(NULL));

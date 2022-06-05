@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "interface.h"
 #include "pseudo.h"
 #include "dif.h"
@@ -66,6 +67,19 @@ void ecrire_ligne(char chaine[], int len_chaine) {
     printf("\n");
 }
 
+void ecrire_ligneint(int att, int len_chaine) {
+    int decalage = (TAILLE - len_chaine) / 2;
+    printf("%-*s", decalage, "|");
+    if (len_chaine % 2 == 0) 
+    {
+        printf("Damage : %d", att);
+    } else {
+        printf("Damage : %d ", att);
+    }
+    printf("%*s", decalage, "|");
+    printf("\n");
+}
+
 void ecrire_ligne_mdg(char chaine[], int len_chaine,char chaine2[], int dec2){
     int decalage = (44 - len_chaine)/2;
     int decalage2 =(44 - dec2)/2;
@@ -82,6 +96,38 @@ void ecrire_ligne_mdg(char chaine[], int len_chaine,char chaine2[], int dec2){
     }
     else{
     printf("%s%*s", chaine2, decalage2, "|");
+    }
+    printf("\n");
+}
+
+void ecrire_ligne_mdgint(float hp, int len_chaine,float hp2, int dec2){
+    if(hp<100){
+        len_chaine=2;
+    }
+    else if(hp<10){
+        len_chaine=1;
+    }
+    if(hp2<100){
+        dec2=2;
+    }
+    if(hp2<10){
+        dec2=1;
+    }
+    int decalage = (44 - len_chaine)/2;
+    int decalage2 =(44 - dec2)/2;
+    printf("%-*s", decalage, "|");
+    if(len_chaine%2==1){
+        printf("%-*d", decalage+len_chaine+1,(int)hp);
+    }
+    else{
+    printf("%-*d", decalage+len_chaine, (int)hp);
+    }
+    printf("%-*s", decalage2, "|");
+    if(dec2%2==1){
+        printf("%d%*s ", (int)hp2, decalage2+1, "|");
+    }
+    else{
+    printf("%d%*s", (int)hp2, decalage2, "|");
     }
     printf("\n");
 }
@@ -125,19 +171,180 @@ void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]) {
 
 
 
-void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
+void choix_adversaire(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *adversaire[3]){
+    int x,y,z,a,b,c,att,m,n,o,p,q,r,d,e,f;
+    x=strlen(perso_select_joueur1[0]->nom);
+    y=strlen(perso_select_joueur1[1]->nom);
+    z=strlen(perso_select_joueur1[2]->nom);
+    a=strlen(perso_select_joueur2[0]->nom);
+    b=strlen(perso_select_joueur2[1]->nom);
+    c=strlen(perso_select_joueur2[2]->nom);
+    att=strlen(attaquant->nom);
+    m=strlen(perso_select_joueur1[0]->type);
+    n=strlen(perso_select_joueur1[1]->type);
+    o=strlen(perso_select_joueur1[2]->type);
+    p=strlen(perso_select_joueur2[0]->type);
+    q=strlen(perso_select_joueur2[1]->type);
+    r=strlen(perso_select_joueur2[2]->type);
+    d=strlen(adversaire[0]->nom);
+    e=strlen(adversaire[1]->nom);
+    f=strlen(adversaire[2]->nom);
     haut();
     for (int i=0;i<ELLIAT;i++){
         switch (i){
         case 0:
-            ecrire_ligne_mdg("Equipe 1",8,"Equipe 2",8);
+            ecrire_ligne_mdg("[Equipe 1]",10,"[Equipe 2]",10);
+            break;
+        case 2:
+            ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
+            break;
+        case 3:
+            ecrire_ligne_mdg(perso_select_joueur1[0]->type,m,perso_select_joueur2[0]->type,p);
+            break;
+        case 4:
+            ecrire_ligne_mdgint(perso_select_joueur1[0]->point_de_vie_courante,3,perso_select_joueur2[0]->point_de_vie_courante,3);
+            break;
+        case 6:
+            ecrire_ligne_mdg(perso_select_joueur1[1]->nom, y, perso_select_joueur2[1]->nom, b);
+            break;
+        case 7:
+            ecrire_ligne_mdg(perso_select_joueur1[1]->type,n,perso_select_joueur2[1]->type,q);
+            break;
+        case 8:
+            ecrire_ligne_mdgint(perso_select_joueur1[1]->point_de_vie_courante,3,perso_select_joueur2[1]->point_de_vie_courante,3);
+            break;
+        case 10:
+            ecrire_ligne_mdg(perso_select_joueur1[2]->nom,z,perso_select_joueur2[2]->nom,c);
+            break;
+        case 11:
+            ecrire_ligne_mdg(perso_select_joueur1[2]->type,o,perso_select_joueur2[2]->type,r);
+            break;
+        case 12:
+            ecrire_ligne_mdgint(perso_select_joueur1[2]->point_de_vie_courante,3,perso_select_joueur2[2]->point_de_vie_courante,3);
+            break;
+        case 13:
+            bas2();
+            break;
+        case 14:
+            ecrire_ligne("it's the turn of :",18);
+            break;
+        case 15:
+            ecrire_ligne(attaquant->nom,att);
+            break;
+        case 16:
+            ecrire_ligne("Type '1' to focus :",19);
+            break;
+        case 17:
+            ecrire_ligne(adversaire[0]->nom,d);
+            break;
+        case 18:
+            ecrire_ligne("Type '2' to focus :",19);
+            break;
+        case 19:
+            ecrire_ligne(adversaire[1]->nom,e);
+            break;
+        case 20:
+            ecrire_ligne("Type '2' to focus :",19);
+            break;
+        case 21:
+            ecrire_ligne(adversaire[2]->nom,f);
             break;
         default:
             barre_m();
             break;
         }
     }
-    bas2();
+    bas();
+}
+
+void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
+    int x,y,z,a,b,c,att,m,n,o,p,q,r;
+    x=strlen(perso_select_joueur1[0]->nom);
+    y=strlen(perso_select_joueur1[1]->nom);
+    z=strlen(perso_select_joueur1[2]->nom);
+    a=strlen(perso_select_joueur2[0]->nom);
+    b=strlen(perso_select_joueur2[1]->nom);
+    c=strlen(perso_select_joueur2[2]->nom);
+    att=strlen(attaquant->nom);
+    m=strlen(perso_select_joueur1[0]->type);
+    n=strlen(perso_select_joueur1[1]->type);
+    o=strlen(perso_select_joueur1[2]->type);
+    p=strlen(perso_select_joueur2[0]->type);
+    q=strlen(perso_select_joueur2[1]->type);
+    r=strlen(perso_select_joueur2[2]->type);
+    haut();
+    for (int i=0;i<ELLIAT;i++){
+        switch (i){
+        case 0:
+            ecrire_ligne_mdg("[Equipe 1]",10,"[Equipe 2]",10);
+            break;
+        case 2:
+            ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
+            break;
+        case 3:
+            ecrire_ligne_mdg(perso_select_joueur1[0]->type,m,perso_select_joueur2[0]->type,p);
+            break;
+        case 4:
+            ecrire_ligne_mdgint(perso_select_joueur1[0]->point_de_vie_courante,3,perso_select_joueur2[0]->point_de_vie_courante,3);
+            break;
+        case 6:
+            ecrire_ligne_mdg(perso_select_joueur1[1]->nom, y, perso_select_joueur2[1]->nom, b);
+            break;
+        case 7:
+            ecrire_ligne_mdg(perso_select_joueur1[1]->type,n,perso_select_joueur2[1]->type,q);
+            break;
+        case 8:
+            ecrire_ligne_mdgint(perso_select_joueur1[1]->point_de_vie_courante,3,perso_select_joueur2[1]->point_de_vie_courante,3);
+            break;
+        case 10:
+            ecrire_ligne_mdg(perso_select_joueur1[2]->nom,z,perso_select_joueur2[2]->nom,c);
+            break;
+        case 11:
+            ecrire_ligne_mdg(perso_select_joueur1[2]->type,o,perso_select_joueur2[2]->type,r);
+            break;
+        case 12:
+            ecrire_ligne_mdgint(perso_select_joueur1[2]->point_de_vie_courante,3,perso_select_joueur2[2]->point_de_vie_courante,3);
+            break;
+        case 13:
+            bas2();
+            break;
+        case 14:
+            ecrire_ligne("it's the turn of :",18);
+            break;
+        case 15:
+            ecrire_ligne(attaquant->nom,att);
+            break;
+        case 16:
+            ecrire_ligne("Type '1' to use normal attack",29);
+            break;
+        case 17:
+            if(attaquant->att<100){
+                ecrire_ligneint(attaquant->att,11);
+            }
+            else{
+                ecrire_ligneint(attaquant->att,12);
+            }
+            break;
+        case 18:
+            ecrire_ligne("Type '2' to use your first special attack",41);
+            break;
+        case 19:
+            //mettre les degat de l'attaque spécial
+            cadre();
+            break;
+        case 20:
+            ecrire_ligne("Type '3' to use your second special attack",42);
+            break;
+        case 21:
+            //mettre les degat de l'attaque spécial
+            cadre();
+            break;
+        default:
+            barre_m();
+            break;
+        }
+    }
+    bas();
 }
 
 void selection(){
@@ -175,7 +382,6 @@ void selection(){
             ecrire_ligne_dg("Evan",4,"Enzo",4);
             break;
         default:
-
             cadre();
             break;
         }

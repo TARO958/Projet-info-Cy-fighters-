@@ -8,18 +8,18 @@
 #define ELLIAT 22
 
 Personnages tab[NB_Personnages]={
-    {.nom = "Anton",.type = "Tank",.point_de_vie_courante = 700 ,.point_de_vie_maximum =1000 ,.agi=0.3,.att =40,.vit = 50,.def = 0.6},
-    {.nom = "Celine",.type = "Soigneuse",.point_de_vie_courante = 250 ,.point_de_vie_maximum =1000 ,.agi=0.8,.att =70,.vit = 20,.def = 0.2},
-    {.nom = "Peter",.type = "Mage",.point_de_vie_courante = 500 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =50,.vit = 30,.def = 0.5},
-    {.nom = "Lucas",.type = "Tank",.point_de_vie_courante = 750 ,.point_de_vie_maximum =1000 ,.agi=0.2,.att =30,.vit = 45,.def = 0.65},
-    {.nom = "Samuel",.type = "Assassin",.point_de_vie_courante = 250 ,.point_de_vie_maximum =1000 ,.agi=0.4,.att =90,.vit = 99,.def = 0.1},
-    {.nom = "Thibaut",.type = "Tank",.point_de_vie_courante = 800 ,.point_de_vie_maximum =1000 ,.agi=0.15,.att =20,.vit = 40,.def = 0.8},
-    {.nom = "Sabrina",.type = "Assassin",.point_de_vie_courante = 500 ,.point_de_vie_maximum =1000 ,.agi=0.1,.att =80,.vit = 90,.def = 0.6},
-    {.nom = "Lea",.type = "Mage",.point_de_vie_courante = 150 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 35,.def = 0.4},
-    {.nom = "Laurie",.type = "Soigneuse",.point_de_vie_courante = 550 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 10,.def = 0.2},
-    {.nom = "Theo",.type = "Guerrier",.point_de_vie_courante = 350 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 80,.def = 0.9},
-    {.nom = "Evan",.type = "Guerrier",.point_de_vie_courante = 450 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 85,.def = 0.1},
-    {.nom = "Enzo",.type = "Assassin",.point_de_vie_courante = 250 ,.point_de_vie_maximum =1000 ,.agi=0.5,.att =60,.vit = 95,.def = 0.5},
+    {.nom = "Anton",.type = "Tank",.point_de_vie_courante = 700 ,.point_de_vie_maximum =999 ,.agi=0.3,.att =40,.vit = 50,.def = 0.6},
+    {.nom = "Celine",.type = "Soigneuse",.point_de_vie_courante = 250 ,.point_de_vie_maximum =999 ,.agi=0.8,.att =70,.vit = 20,.def = 0.2},
+    {.nom = "Peter",.type = "Mage",.point_de_vie_courante = 500 ,.point_de_vie_maximum =999 ,.agi=0.5,.att =50,.vit = 30,.def = 0.5},
+    {.nom = "Lucas",.type = "Tank",.point_de_vie_courante = 750 ,.point_de_vie_maximum =999 ,.agi=0.2,.att =30,.vit = 45,.def = 0.65},
+    {.nom = "Samuel",.type = "Assassin",.point_de_vie_courante = 250 ,.point_de_vie_maximum =999 ,.agi=0.4,.att =90,.vit = 99,.def = 0.1},
+    {.nom = "Thibaut",.type = "Tank",.point_de_vie_courante = 800 ,.point_de_vie_maximum =999 ,.agi=0.15,.att =20,.vit = 40,.def = 0.8},
+    {.nom = "Sabrina",.type = "Assassin",.point_de_vie_courante = 500 ,.point_de_vie_maximum =999 ,.agi=0.1,.att =80,.vit = 90,.def = 0.6},
+    {.nom = "Lea",.type = "Mage",.point_de_vie_courante = 150 ,.point_de_vie_maximum =999 ,.agi=0.5,.att =60,.vit = 35,.def = 0.4},
+    {.nom = "Laurie",.type = "Soigneuse",.point_de_vie_courante = 550 ,.point_de_vie_maximum =999 ,.agi=0.5,.att =60,.vit = 10,.def = 0.2},
+    {.nom = "Theo",.type = "Guerrier",.point_de_vie_courante = 350 ,.point_de_vie_maximum =999 ,.agi=0.5,.att =60,.vit = 80,.def = 0.9},
+    {.nom = "Evan",.type = "Guerrier",.point_de_vie_courante = 450 ,.point_de_vie_maximum =999 ,.agi=0.5,.att =60,.vit = 85,.def = 0.1},
+    {.nom = "Enzo",.type = "Assassin",.point_de_vie_courante = 250 ,.point_de_vie_maximum =999 ,.agi=0.5,.att =60,.vit = 95,.def = 0.5},
 };
 void list_perso2(){
     int x;
