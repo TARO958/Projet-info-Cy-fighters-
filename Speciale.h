@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 typedef struct Speciales Speciales; 
+#define NB_ATT_SPE 24
 
 
-struct Speciales{
+
+  struct Speciales{
     char nom[25];
     float valeur;
     char description[200];

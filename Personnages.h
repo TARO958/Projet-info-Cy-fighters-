@@ -9,7 +9,8 @@ typedef struct Personnages Personnages;
  struct Personnages{
     char nom[25];
     char type[25];
-    Speciales *att_spe;
+    Speciales *att_spe1;
+    Speciales *att_spe2;
     float point_de_vie_courante ;
     float point_de_vie_maximum;
     float att;
