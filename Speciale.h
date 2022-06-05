@@ -11,7 +11,6 @@ typedef struct Speciales Speciales;
     char description[200];
     int nb_tours_actifs;
     int nb_tours_rechargement;
-    
 };
 
 void action_att_spe();

@@ -493,7 +493,7 @@ void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3
             bas2();
             break;
         case 14:
-            ecrire_ligne("Character playing now :",13);
+            ecrire_ligne("Character playing now :",23);
             break;
         case 15:
             ecrire_ligne(attaquant->nom,att);
@@ -587,22 +587,22 @@ void list_perso1(){
                 ecrire_ligne_mdg("type : Tank",11,"type : Support",14);
                 break;
             case 4:
-                ecrire_ligne_mdg("Pv : 700",8,"pv : 250",8);
+                ecrire_ligne_mdg("Pv : 600",8,"pv : 400",8);
                 break;
             case 5:
                 ecrire_ligne_mdg("att : 40",8,"att : 70",8);
                 break;
             case 6:
-                ecrire_ligne_mdg("def : 0.60",10,"def : 0.20",10);
+                ecrire_ligne_mdg("def : 0.70",10,"def : 0.20",10);
                 break;
             case 7:
-                ecrire_ligne_mdg("vit : 50",8,"vit : 20",8);
+                ecrire_ligne_mdg("vit : 30",8,"vit : 20",8);
                 break;
             case 8:
-                ecrire_ligne_mdg("agi : 0.30",10,"agi : 0.80",10);
+                ecrire_ligne_mdg("agi : 0.00",10,"agi : 0.30",10);
                 break;
             case 9:
-                ecrire_ligne_mdg("ult : ",6,"ult : ",6);
+                ecrire_ligne_mdg("ult : Charge, Dirt wall",19,"ult : Magic heal, Miraculous heal",33);
                 break;
             case 11:
                 bas2();
@@ -614,22 +614,22 @@ void list_perso1(){
                 ecrire_ligne_mdg("type : Mage",11,"type : Tank",11);
                 break;
             case 16:
-                ecrire_ligne_mdg("Pv : 500",8,"pv : 750",8);
+                ecrire_ligne_mdg("Pv : 450",8,"pv : 550",8);
                 break;
             case 17:
                 ecrire_ligne_mdg("att : 50",8,"att : 30",8);
                 break;
             case 18:
-                ecrire_ligne_mdg("def : 0.50",10,"def : 0.65",10);
+                ecrire_ligne_mdg("def : 0.20",10,"def : 0.75",10);
                 break;
             case 19:
-                ecrire_ligne_mdg("vit : 30",8,"vit : 45",8);
+                ecrire_ligne_mdg("vit : 45",8,"vit : 35",8);
                 break;
             case 20:
-                ecrire_ligne_mdg("agi : 0.50",10,"agi : 0.20",10);
+                ecrire_ligne_mdg("agi : 0.15",10,"agi : 0.00",10);
                 break;
             case 21:
-                ecrire_ligne_mdg("ult : ",6,"ult : ",6);
+                ecrire_ligne_mdg("ult : Meteor, Lightning",23,"ult : Charge, Shield",20);
                 break;
             default:
                 barre_m();
@@ -673,22 +673,22 @@ void list_perso3(){
                 ecrire_ligne_mdg("type : Support",14,"type : Warrior",14);
                 break;
             case 4:
-                ecrire_ligne_mdg("Pv : 550",8,"pv : 350",8);
+                ecrire_ligne_mdg("Pv : 400",8,"pv : 475",8);
                 break;
             case 5:
                 ecrire_ligne_mdg("att : 60",8,"att : 60",8);
                 break;
             case 6:
-                ecrire_ligne_mdg("def : 0.40",10,"def : 0.90",10);
+                ecrire_ligne_mdg("def : 0.20",10,"def : 0.37",10);
                 break;
             case 7:
                 ecrire_ligne_mdg("vit : 10",8,"vit : 80",8);
                 break;
             case 8:
-                ecrire_ligne_mdg("agi : 0.50",10,"agi : 0.50",10);
+                ecrire_ligne_mdg("agi : 0.30",10,"agi : 0.10",10);
                 break;
             case 9:
-                ecrire_ligne_mdg("ult : ",6,"ult : ",6);
+                ecrire_ligne_mdg("ult : Magic heal, Miraculous heal",33,"ult : Shuriken, Fiery fist",26);
                 break;
             case 11:
                 bas2();
@@ -700,22 +700,22 @@ void list_perso3(){
                 ecrire_ligne_mdg("type : Warrior",14,"type : Assassin",15);
                 break;
             case 16:
-                ecrire_ligne_mdg("Pv : 450",8,"pv : 250",8);
+                ecrire_ligne_mdg("Pv : 500",8,"pv : 375",8);
                 break;
             case 17:
                 ecrire_ligne_mdg("att : 60",8,"att : 60",8);
                 break;
             case 18:
-                ecrire_ligne_mdg("def : 0.10",10,"def : 0.50",10);
+                ecrire_ligne_mdg("def : 0.45",10,"def : 0.35",10);
                 break;
             case 19:
                 ecrire_ligne_mdg("vit : 85",8,"vit : 95",8);
                 break;
             case 20:
-                ecrire_ligne_mdg("agi : 0.50",10,"agi : 0.50",10);
+                ecrire_ligne_mdg("agi : 0.10",10,"agi : 0.20",10);
                 break;
             case 21:
-                ecrire_ligne_mdg("ult : ",6,"ult : ",6);
+                ecrire_ligne_mdg("ult : Smash, Whirlwind",22,"ult : Bite, Dash in",19);
                 break;
             default:
                 barre_m();

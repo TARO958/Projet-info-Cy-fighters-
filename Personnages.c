@@ -38,9 +38,9 @@ Personnages tab[NB_Personnages]={
     {.nom = "Anton",.type = "Tank",.point_de_vie_courante = 600 ,.point_de_vie_maximum =1000 ,.agi=0.0,.att =40,.vit = 30,.def = 0.7,.att_spe1=&spe[0],.att_spe2=&spe[19]},
     {.nom = "Celine",.type = "Support",.point_de_vie_courante = 400 ,.point_de_vie_maximum =1000 ,.agi=0.3,.att =70,.vit = 20,.def = 0.2,.att_spe1=&spe[5],.att_spe2=&spe[4]},
     {.nom = "Peter",.type = "Mage",.point_de_vie_courante = 450 ,.point_de_vie_maximum =1000 ,.agi=0.15,.att =50,.vit = 45,.def = 0.2,.att_spe1=&spe[1],.att_spe2=&spe[11]},
-    {.nom = "Lucas",.type = "Tank",.point_de_vie_courante = 550 ,.point_de_vie_maximum =1000 ,.agi=0.1,.att =30,.vit = 35,.def = 0.75,.att_spe1=&spe[17],.att_spe2=&spe[6]},
+    {.nom = "Lucas",.type = "Tank",.point_de_vie_courante = 550 ,.point_de_vie_maximum =1000 ,.agi=0.0,.att =30,.vit = 35,.def = 0.75,.att_spe1=&spe[17],.att_spe2=&spe[6]},
     {.nom = "Samuel",.type = "Assassin",.point_de_vie_courante = 400 ,.point_de_vie_maximum =1000 ,.agi=0.17,.att =90,.vit = 99,.def = 0.35,.att_spe1=&spe[18],.att_spe2=&spe[23]},
-    {.nom = "Thibaut",.type = "Tank",.point_de_vie_courante = 650 ,.point_de_vie_maximum =1000 ,.agi=0.1,.att =20,.vit = 40,.def = 0.6,.att_spe1=&spe[6],.att_spe2=&spe[22]},
+    {.nom = "Thibaut",.type = "Tank",.point_de_vie_courante = 650 ,.point_de_vie_maximum =1000 ,.agi=0.0,.att =20,.vit = 40,.def = 0.6,.att_spe1=&spe[6],.att_spe2=&spe[22]},
     {.nom = "Sabrina",.type = "Assassin",.point_de_vie_courante = 415 ,.point_de_vie_maximum =1000 ,.agi=0.15,.att =80,.vit = 90,.def = 0.3,.att_spe1=&spe[12],.att_spe2=&spe[8]},
     {.nom = "Lea",.type = "Mage",.point_de_vie_courante = 425 ,.point_de_vie_maximum =1000 ,.agi=0.2,.att =60,.vit = 50,.def = 0.25,.att_spe1=&spe[2],.att_spe2=&spe[9]},
     {.nom = "Laurie",.type = "Support",.point_de_vie_courante = 400 ,.point_de_vie_maximum =1000 ,.agi=0.3,.att =60,.vit = 10,.def = 0.2,.att_spe1=&spe[5],.att_spe2=&spe[4]},
@@ -66,22 +66,22 @@ void list_perso2(){
                 ecrire_ligne_mdg("type : Assassin",15,"type : Tank",11);
             
             case 4:
-                ecrire_ligne_mdg("Pv : 250",8,"pv : 800",8);
+                ecrire_ligne_mdg("Pv : 400",8,"pv : 650",8);
                 break;
             case 5:
                 ecrire_ligne_mdg("att : 90",8,"att : 20",8);
                 break;
             case 6:
-                ecrire_ligne_mdg("def : 0.10",10,"def : 0.80",10);
+                ecrire_ligne_mdg("def : 0.35",10,"def : 0.60",10);
                 break;
             case 7:
                 ecrire_ligne_mdg("vit : 99",8,"vit : 40",8);
                 break;
             case 8:
-                ecrire_ligne_mdg("agi : 0.40",10,"agi : 0.15",10);
+                ecrire_ligne_mdg("agi : 0.17",10,"agi : 0.10",10);
                 break;
             case 9:
-                ecrire_ligne_mdg("ult : ",6,"ult : ",6);
+                ecrire_ligne_mdg("ult : Smoke, Deep cut",21,"ult : Shield, Grenade launcher",30);
                 break;
             case 11:
                 bas2();
@@ -93,22 +93,22 @@ void list_perso2(){
                 ecrire_ligne_mdg("type : Assassin",15,"type : Mage",11);
                 break;
             case 16:
-                ecrire_ligne_mdg("Pv : 500",8,"pv : 150",8);
+                ecrire_ligne_mdg("Pv : 415",8,"pv : 425",8);
                 break;
             case 17:
                 ecrire_ligne_mdg("att : 80",8,"att : 60",8);
                 break;
             case 18:
-                ecrire_ligne_mdg("def : 0.60",10,"def : 0.40",10);
+                ecrire_ligne_mdg("def : 0.30",10,"def : 0.25",10);
                 break;
             case 19:
-                ecrire_ligne_mdg("vit : 90",8,"vit : 35",8);
+                ecrire_ligne_mdg("vit : 90",8,"vit : 50",8);
                 break;
             case 20:
-                ecrire_ligne_mdg("agi : 0.10",10,"agi : 0.50",10);
+                ecrire_ligne_mdg("agi : 0.15",10,"agi : 0.20",10);
                 break;
             case 21:
-                ecrire_ligne_mdg("ult : ",6,"ult : ",6);
+                ecrire_ligne_mdg("ult : Side step, Claw",21,"ult : Fire ball, Storm",22);
                 break;
             default:
                 barre_m();

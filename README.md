@@ -6,7 +6,7 @@ I didn’t know it would take me so long and be so rigorous .We take a lot of fu
 ```
 
 
-# How to launch
+# How to start game
 ```
 To start the game you have to tape 1 ,after you have to make the selction in one or two players ,and choose the  name of the teams of the two players if you choose one or choose the difficulty of the bot if you choose 2, tape 1 and the figth begin after the selction of chracters.   
 ```
@@ -15,4 +15,10 @@ To start the game you have to tape 1 ,after you have to make the selction in one
 # Collaborators
 ```
 Samuel Zerrouk,Evan Gobe-Truong
+```
+
+# How to launch the programe
+```
+gcc .\main.c .\interface.c .\Personnages.c .\pseudo.c .\dif.c .\Speciale.c .\combat.c .\bot.c
+./a.exe
 ```
