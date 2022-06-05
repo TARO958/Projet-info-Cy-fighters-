@@ -263,7 +263,7 @@ void choix_adversaire(Personnages *attaquant,Personnages *perso_select_joueur1[3
     bas();
 }
 
-void choix_adversaire_heal(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *adversaire[3]){
+void choix_heal(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3],Personnages *adversaire[3]){
     int x,y,z,a,b,c,att,m,n,o,p,q,r,d,e,f;
     x=strlen(perso_select_joueur1[0]->nom);
     y=strlen(perso_select_joueur1[1]->nom);
@@ -332,7 +332,7 @@ void choix_adversaire_heal(Personnages *attaquant,Personnages *perso_select_joue
         case 18:
             ecrire_ligne("Type '2' to heal :",18);
             break;
-        case 18:
+        case 19:
             ecrire_ligne(adversaire[1]->nom,e);
             break;
         case 20:
@@ -421,12 +421,7 @@ void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3
             ecrire_ligne("Type '2' to use your first special attack every 2 round",55);
             break;
         case 19:
-            if(attaquant->att<100){
-                ecrire_ligneint(attaquant->att_spe1->valeur,11);
-            }
-            else{
                 ecrire_ligneint(attaquant->att_spe1->valeur,12);
-            }
             break;
         case 20:
             ecrire_ligne("Type '3' to use your second special attack every 10 round",57);

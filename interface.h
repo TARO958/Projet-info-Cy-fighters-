@@ -14,8 +14,8 @@ void ecrire_ligne_droite_gauche(char chaine[], int len_chaine, char chaine2[]);
 void ecrire_ligne_mdg(char chaine[], int len_chaine,char chaine2[], int dec2);
 
 
-void choix_adversaire_heal();
 void choix_adversaire();
+void choix_heal();
 void effectuer_action();
 void selection();
 void list_perso1();

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "time.h"
 #include "combat.h"
 #include "Personnages.h"
@@ -156,10 +157,10 @@ void select_adversaire(Personnages *attaquant,Personnages *perso_select_joueur1[
 
 void select_adversaire_spe1(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
     int x,y;
-    if (attaquant->nom=="Laurie" || attaquant->nom=="Celine"){
+    if (strcmpi(attaquant->nom,"Laurie")==0 || strcmpi(attaquant->nom,"Celine")==0){
         if (attaquant==perso_select_joueur1[0] || attaquant==perso_select_joueur1[1] || attaquant==perso_select_joueur1[2]){
             do{
-                choix_adversaire_heal(attaquant,perso_select_joueur1,perso_select_joueur2,perso_select_joueur1);
+                choix_heal(attaquant,perso_select_joueur1,perso_select_joueur2,perso_select_joueur1);
                 scanf("%d",&x);
                 viderclavier();
                 switch (x){
@@ -179,7 +180,7 @@ void select_adversaire_spe1(Personnages *attaquant,Personnages *perso_select_jou
         }
         else if (attaquant==perso_select_joueur2[0] || attaquant==perso_select_joueur2[1] || attaquant==perso_select_joueur2[2]){
             do{
-                choix_adversaire(attaquant,perso_select_joueur1,perso_select_joueur2,perso_select_joueur2);
+                choix_heal(attaquant,perso_select_joueur1,perso_select_joueur2,perso_select_joueur2);
                 scanf("%d",&y);
                 viderclavier();
                 switch (y){
@@ -244,21 +245,21 @@ void select_adversaire_spe1(Personnages *attaquant,Personnages *perso_select_jou
 
 void select_adversaire_spe2(Personnages *attaquant,Personnages *perso_select_joueur1[3],Personnages *perso_select_joueur2[3]){
     int x,y;
-    if (attaquant->nom=="Laurie" || attaquant->nom=="Celine"){
+    if (strcmpi(attaquant->nom,"Laurie")==0 || strcmpi(attaquant->nom,"Celine")==0){
         if (attaquant==perso_select_joueur1[0] || attaquant==perso_select_joueur1[1] || attaquant==perso_select_joueur1[2]){
             do{
-                choix_adversaire(attaquant,perso_select_joueur1,perso_select_joueur2,perso_select_joueur1);
+                choix_heal(attaquant,perso_select_joueur1,perso_select_joueur2,perso_select_joueur1);
                 scanf("%d",&x);
                 viderclavier();
                 switch (x){
                 case 1:
-                    action_att_spe2(attaquant,perso_select_joueur1[0]);
+                    action_heal_spe2(attaquant,perso_select_joueur1[0]);
                     break;
                 case 2:
-                    action_att_spe2(attaquant,perso_select_joueur1[1]);
+                    action_heal_spe2(attaquant,perso_select_joueur1[1]);
                     break;
                 case 3:
-                    action_att_spe2(attaquant,perso_select_joueur1[2]);
+                    action_heal_spe2(attaquant,perso_select_joueur1[2]);
                     break;
                 default:
                     break;
@@ -267,18 +268,18 @@ void select_adversaire_spe2(Personnages *attaquant,Personnages *perso_select_jou
         }
         else if (attaquant==perso_select_joueur2[0] || attaquant==perso_select_joueur2[1] || attaquant==perso_select_joueur2[2]){
             do{
-                choix_adversaire(attaquant,perso_select_joueur1,perso_select_joueur2,perso_select_joueur2);
+                choix_heal(attaquant,perso_select_joueur1,perso_select_joueur2,perso_select_joueur2);
                 scanf("%d",&y);
                 viderclavier();
                 switch (y){
                 case 1:
-                    action_att_spe2(attaquant,perso_select_joueur2[0]);
+                    action_heal_spe2(attaquant,perso_select_joueur2[0]);
                     break;
                 case 2:
-                    action_att_spe2(attaquant,perso_select_joueur2[1]);
+                    action_heal_spe2(attaquant,perso_select_joueur2[1]);
                     break;
                 case 3:
-                    action_att_spe2(attaquant,perso_select_joueur2[2]);
+                    action_heal_spe2(attaquant,perso_select_joueur2[2]);
                     break;
                 default:
                     break;
