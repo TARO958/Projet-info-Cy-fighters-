@@ -168,8 +168,20 @@ void effectuer_action(Personnages *attaquant,Personnages *perso_select_joueur1[3
         case 2:
             ecrire_ligne_mdg(perso_select_joueur1[0]->nom,x,perso_select_joueur2[0]->nom,a);
             break;
-        case 3:
+        case 4:
             ecrire_ligne_mdgint(perso_select_joueur1[0]->point_de_vie_courante,3,perso_select_joueur2[0]->point_de_vie_courante,3);
+            break;
+        case 6:
+            ecrire_ligne_mdg(perso_select_joueur1[1]->nom, y, perso_select_joueur2[1]->nom, b);
+            break;
+        case 8:
+            ecrire_ligne_mdgint(perso_select_joueur1[1]->point_de_vie_courante,3,perso_select_joueur2[1]->point_de_vie_courante,3);
+            break;
+        case 10:
+            ecrire_ligne_mdg(perso_select_joueur1[2]->nom,z,perso_select_joueur2[2]->nom,c);
+            break;
+        case 12:
+            ecrire_ligne_mdgint(perso_select_joueur1[2]->point_de_vie_courante,3,perso_select_joueur2[2]->point_de_vie_courante,3);
             break;
         default:
             barre_m();
